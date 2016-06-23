@@ -21,5 +21,11 @@ namespace AlmacenTech
         {
 
         }
+
+        private void Registerbutton_Click(object sender, EventArgs e)
+        {
+            RegisterForm Rf = new RegisterForm();
+            Rf.Show();
+        }
     }
 }
