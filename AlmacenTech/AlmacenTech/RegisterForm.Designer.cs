@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.ApellidoTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.UserNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.PassTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ConfPassTextBox = new System.Windows.Forms.TextBox();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,19 +62,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellido";
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(451, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 22);
-            this.textBox1.TabIndex = 2;
+            this.NameTextBox.Location = new System.Drawing.Point(451, 48);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(188, 22);
+            this.NameTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // ApellidoTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(720, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 22);
-            this.textBox2.TabIndex = 3;
+            this.ApellidoTextBox.Location = new System.Drawing.Point(720, 47);
+            this.ApellidoTextBox.Name = "ApellidoTextBox";
+            this.ApellidoTextBox.Size = new System.Drawing.Size(186, 22);
+            this.ApellidoTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -86,12 +86,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Nombre de Usuario";
             // 
-            // textBox3
+            // UserNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(536, 121);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 22);
-            this.textBox3.TabIndex = 5;
+            this.UserNameTextBox.Location = new System.Drawing.Point(536, 121);
+            this.UserNameTextBox.Name = "UserNameTextBox";
+            this.UserNameTextBox.Size = new System.Drawing.Size(188, 22);
+            this.UserNameTextBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -103,12 +103,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Contraseña";
             // 
-            // textBox4
+            // PassTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(492, 171);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 22);
-            this.textBox4.TabIndex = 7;
+            this.PassTextBox.Location = new System.Drawing.Point(492, 171);
+            this.PassTextBox.Name = "PassTextBox";
+            this.PassTextBox.Size = new System.Drawing.Size(232, 22);
+            this.PassTextBox.TabIndex = 7;
             // 
             // label5
             // 
@@ -120,21 +120,22 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Confirmar contraseña";
             // 
-            // textBox5
+            // ConfPassTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(559, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(165, 22);
-            this.textBox5.TabIndex = 9;
+            this.ConfPassTextBox.Location = new System.Drawing.Point(559, 225);
+            this.ConfPassTextBox.Name = "ConfPassTextBox";
+            this.ConfPassTextBox.Size = new System.Drawing.Size(165, 22);
+            this.ConfPassTextBox.TabIndex = 9;
             // 
-            // button1
+            // RegisterButton
             // 
-            this.button1.Location = new System.Drawing.Point(592, 299);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 31);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Registrarse";
-            this.button1.UseVisualStyleBackColor = true;
+            this.RegisterButton.Location = new System.Drawing.Point(621, 299);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(92, 31);
+            this.RegisterButton.TabIndex = 11;
+            this.RegisterButton.Text = "Registrarse";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // RegisterForm
             // 
@@ -143,15 +144,15 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(918, 363);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.RegisterButton);
+            this.Controls.Add(this.ConfPassTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.PassTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.UserNameTextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ApellidoTextBox);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
@@ -167,14 +168,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.TextBox ApellidoTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox UserNameTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox PassTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox ConfPassTextBox;
+        private System.Windows.Forms.Button RegisterButton;
     }
 }

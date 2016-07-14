@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace DALL
         {
             
         }
+
+        public virtual DbSet<Usuarios> usuario { get; set; }
     }
 }

@@ -101,6 +101,16 @@
   <ItemGroup>
     <Content Include="DataBase\Almacen.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DALL\DALL.csproj">
+      <Project>{6f24d062-facd-4868-bca8-2b78e9f7ce7e}</Project>
+      <Name>DALL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{e6720494-7a69-4a13-a1b4-eadce82a0db2}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
