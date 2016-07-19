@@ -26,8 +26,8 @@ namespace AlmacenTech.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-2IK02I9\\SQLEXPRESS;Initial Catalog=AlmacenBancas;Integrated S" +
-            "ecurity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DataBase\\Alma" +
+            "cenTech.mdf;Integrated Security=True;Connect Timeout=30")]
         public string Conection {
             get {
                 return ((string)(this["Conection"]));
