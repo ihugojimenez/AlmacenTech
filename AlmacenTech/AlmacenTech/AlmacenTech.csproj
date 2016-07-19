@@ -114,7 +114,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\Almacen.sql" />
     <Content Include="DataBase\AlmacenTech.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
