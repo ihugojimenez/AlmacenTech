@@ -35,7 +35,8 @@
             this.banqueraIdTextBox = new System.Windows.Forms.TextBox();
             this.equipoIdTextBox = new System.Windows.Forms.TextBox();
             this.rutaIdTextBox = new System.Windows.Forms.TextBox();
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
             banqueraIdLabel = new System.Windows.Forms.Label();
             equipoIdLabel = new System.Windows.Forms.Label();
             rutaIdLabel = new System.Windows.Forms.Label();
@@ -89,14 +90,29 @@
             this.rutaIdTextBox.Size = new System.Drawing.Size(24, 22);
             this.rutaIdTextBox.TabIndex = 8;
             // 
-            // RegisterButton
+            // SaveButton
             // 
-            this.RegisterButton.Location = new System.Drawing.Point(41, 192);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(75, 28);
-            this.RegisterButton.TabIndex = 9;
-            this.RegisterButton.Text = "Registrar";
-            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.SaveButton.Location = new System.Drawing.Point(12, 144);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(84, 51);
+            this.SaveButton.TabIndex = 9;
+            this.SaveButton.Text = "Guardar";
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.EliminarButton.Location = new System.Drawing.Point(175, 144);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(69, 51);
+            this.EliminarButton.TabIndex = 10;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EliminarButton.UseVisualStyleBackColor = true;
             // 
             // RegistroBancasForm
             // 
@@ -104,14 +120,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(256, 250);
-            this.Controls.Add(this.RegisterButton);
+            this.ClientSize = new System.Drawing.Size(282, 223);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(rutaIdLabel);
             this.Controls.Add(this.rutaIdTextBox);
             this.Controls.Add(equipoIdLabel);
             this.Controls.Add(this.equipoIdTextBox);
             this.Controls.Add(banqueraIdLabel);
             this.Controls.Add(this.banqueraIdTextBox);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(272, 262);
             this.Name = "RegistroBancasForm";
             this.Text = "Bancas";
             this.Load += new System.EventHandler(this.RegistroBancasForm_Load);
@@ -125,6 +144,7 @@
         private System.Windows.Forms.TextBox banqueraIdTextBox;
         private System.Windows.Forms.TextBox equipoIdTextBox;
         private System.Windows.Forms.TextBox rutaIdTextBox;
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button EliminarButton;
     }
 }

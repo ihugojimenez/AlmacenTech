@@ -17,5 +17,12 @@ namespace AlmacenTech
             InitializeComponent();
         }
 
+    
+
+        private void RegistroBanquerasForm_Load(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }

@@ -27,6 +27,11 @@ namespace AlmacenTech
             RegisterUsersForm Rf = new RegisterUsersForm();
             Rf.Show();
 
+            RegistroBancasForm rf = new RegistroBancasForm();
+            rf.Show();
+
+            RegistroBanquerasForm rb = new RegistroBanquerasForm();
+            rb.Show();
            /* EquiposForm ef = new EquiposForm();
             ef.Show();*/
         }
