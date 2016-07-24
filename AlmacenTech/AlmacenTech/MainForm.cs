@@ -17,32 +17,37 @@ namespace AlmacenTech
             InitializeComponent();
         }
 
+        private void registrarMensajeroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MensajerosForm MF = new MensajerosForm();
+            MF.MdiParent = this;
+            MF.Show();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Registerbutton_Click(object sender, EventArgs e)
+        private void registrarBanqueraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterUsersForm Rf = new RegisterUsersForm();
-            Rf.Show();
+            RegistroBanquerasForm Rb = new RegistroBanquerasForm();
+            Rb.MdiParent = this;
+            Rb.Show();
+        }
 
-            RegistroBancasForm rf = new RegistroBancasForm();
-            rf.Show();
+        private void registrarBancaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroBancasForm RB = new RegistroBancasForm();
+            RB.MdiParent = this;
+            RB.Show();
+        }
 
-            RegistroBanquerasForm rb = new RegistroBanquerasForm();
-            rb.Show();
-
-            MensajerosForm mf = new MensajerosForm();
-            mf.Show();
-
-            PrestamosForm pf = new PrestamosForm();
-            pf.Show();
-
-            RutasForm ruf = new RutasForm();
-            ruf.Show();
-           /* EquiposForm ef = new EquiposForm();
-            ef.Show();*/
+        private void registrarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EquiposForm EF = new EquiposForm();
+            EF.MdiParent = this;
+            EF.Show();
         }
     }
 }
