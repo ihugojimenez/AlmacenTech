@@ -1,6 +1,4 @@
-﻿using DALL;
-using Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +10,11 @@ using System.Windows.Forms;
 
 namespace AlmacenTech
 {
-    public partial class Form1 : Form
+    public partial class Form : Form
     {
-        public Form1()
+        public Form()
         {
             InitializeComponent();
-        }
-
-        
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
