@@ -50,13 +50,6 @@
             banqueraIdLabel.TabIndex = 3;
             banqueraIdLabel.Text = "Banquera Id:";
             // 
-            // banqueraIdTextBox
-            // 
-            this.banqueraIdTextBox.Location = new System.Drawing.Point(102, 21);
-            this.banqueraIdTextBox.Name = "banqueraIdTextBox";
-            this.banqueraIdTextBox.Size = new System.Drawing.Size(27, 22);
-            this.banqueraIdTextBox.TabIndex = 4;
-            // 
             // equipoIdLabel
             // 
             equipoIdLabel.AutoSize = true;
@@ -66,13 +59,6 @@
             equipoIdLabel.TabIndex = 5;
             equipoIdLabel.Text = "Equipo Id:";
             // 
-            // equipoIdTextBox
-            // 
-            this.equipoIdTextBox.Location = new System.Drawing.Point(86, 65);
-            this.equipoIdTextBox.Name = "equipoIdTextBox";
-            this.equipoIdTextBox.Size = new System.Drawing.Size(56, 22);
-            this.equipoIdTextBox.TabIndex = 6;
-            // 
             // rutaIdLabel
             // 
             rutaIdLabel.AutoSize = true;
@@ -81,6 +67,20 @@
             rutaIdLabel.Size = new System.Drawing.Size(53, 16);
             rutaIdLabel.TabIndex = 7;
             rutaIdLabel.Text = "Ruta Id:";
+            // 
+            // banqueraIdTextBox
+            // 
+            this.banqueraIdTextBox.Location = new System.Drawing.Point(102, 21);
+            this.banqueraIdTextBox.Name = "banqueraIdTextBox";
+            this.banqueraIdTextBox.Size = new System.Drawing.Size(27, 22);
+            this.banqueraIdTextBox.TabIndex = 4;
+            // 
+            // equipoIdTextBox
+            // 
+            this.equipoIdTextBox.Location = new System.Drawing.Point(86, 65);
+            this.equipoIdTextBox.Name = "equipoIdTextBox";
+            this.equipoIdTextBox.Size = new System.Drawing.Size(56, 22);
+            this.equipoIdTextBox.TabIndex = 6;
             // 
             // rutaIdTextBox
             // 
@@ -104,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(321, 250);
+            this.ClientSize = new System.Drawing.Size(256, 250);
             this.Controls.Add(this.RegisterButton);
             this.Controls.Add(rutaIdLabel);
             this.Controls.Add(this.rutaIdTextBox);
@@ -113,7 +113,7 @@
             this.Controls.Add(banqueraIdLabel);
             this.Controls.Add(this.banqueraIdTextBox);
             this.Name = "RegistroBancasForm";
-            this.Text = "RegistroBancasForm";
+            this.Text = "Bancas";
             this.Load += new System.EventHandler(this.RegistroBancasForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

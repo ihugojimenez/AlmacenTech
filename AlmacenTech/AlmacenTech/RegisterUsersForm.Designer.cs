@@ -39,7 +39,12 @@
             this.PassTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ConfPassTextBox = new System.Windows.Forms.TextBox();
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.ButtonsgroupBox = new System.Windows.Forms.GroupBox();
+            this.Deletebutton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.ButtonsgroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -128,15 +133,71 @@
             this.ConfPassTextBox.Size = new System.Drawing.Size(143, 22);
             this.ConfPassTextBox.TabIndex = 9;
             // 
-            // RegisterButton
+            // ButtonsgroupBox
             // 
-            this.RegisterButton.Location = new System.Drawing.Point(122, 249);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(92, 31);
-            this.RegisterButton.TabIndex = 11;
-            this.RegisterButton.Text = "Registrarse";
-            this.RegisterButton.UseVisualStyleBackColor = true;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            this.ButtonsgroupBox.Controls.Add(this.Deletebutton);
+            this.ButtonsgroupBox.Controls.Add(this.SaveButton);
+            this.ButtonsgroupBox.Controls.Add(this.UpdateButton);
+            this.ButtonsgroupBox.Location = new System.Drawing.Point(7, 228);
+            this.ButtonsgroupBox.Name = "ButtonsgroupBox";
+            this.ButtonsgroupBox.Size = new System.Drawing.Size(428, 74);
+            this.ButtonsgroupBox.TabIndex = 17;
+            this.ButtonsgroupBox.TabStop = false;
+            this.ButtonsgroupBox.Text = "Opciones";
+            // 
+            // Deletebutton
+            // 
+            this.Deletebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
+            this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Deletebutton.Location = new System.Drawing.Point(12, 16);
+            this.Deletebutton.Name = "Deletebutton";
+            this.Deletebutton.Size = new System.Drawing.Size(80, 48);
+            this.Deletebutton.TabIndex = 13;
+            this.Deletebutton.Text = "Eliminar";
+            this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Deletebutton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
+            this.SaveButton.Location = new System.Drawing.Point(319, 16);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(74, 49);
+            this.SaveButton.TabIndex = 14;
+            this.SaveButton.Text = "Agregar";
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateButton.Image")));
+            this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UpdateButton.Location = new System.Drawing.Point(172, 15);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(77, 49);
+            this.UpdateButton.TabIndex = 11;
+            this.UpdateButton.Text = "Guardar";
+            this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
+            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.searchButton.Location = new System.Drawing.Point(350, 40);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(81, 36);
+            this.searchButton.TabIndex = 16;
+            this.searchButton.Text = "Buscar";
+            this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.searchButton.UseVisualStyleBackColor = true;
             // 
             // RegisterUsersForm
             // 
@@ -146,8 +207,9 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(386, 292);
-            this.Controls.Add(this.RegisterButton);
+            this.ClientSize = new System.Drawing.Size(447, 317);
+            this.Controls.Add(this.ButtonsgroupBox);
+            this.Controls.Add(this.searchButton);
             this.Controls.Add(this.ConfPassTextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.PassTextBox);
@@ -159,10 +221,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(463, 356);
             this.Name = "RegisterUsersForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Usuarios";
+            this.ButtonsgroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,6 +245,10 @@
         private System.Windows.Forms.TextBox PassTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ConfPassTextBox;
-        private System.Windows.Forms.Button RegisterButton;
+        private System.Windows.Forms.GroupBox ButtonsgroupBox;
+        private System.Windows.Forms.Button Deletebutton;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Button searchButton;
     }
 }

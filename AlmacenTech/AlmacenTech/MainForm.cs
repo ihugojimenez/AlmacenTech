@@ -26,6 +26,9 @@ namespace AlmacenTech
         {
             RegisterUsersForm Rf = new RegisterUsersForm();
             Rf.Show();
+
+           /* EquiposForm ef = new EquiposForm();
+            ef.Show();*/
         }
     }
 }
