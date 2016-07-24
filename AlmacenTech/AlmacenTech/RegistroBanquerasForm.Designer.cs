@@ -35,8 +35,8 @@
             System.Windows.Forms.Label cedulaLabel;
             System.Windows.Forms.Label celularLabel;
             System.Windows.Forms.Label telefonoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroBanquerasForm));
             System.Windows.Forms.Label banqueraIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroBanquerasForm));
             this.nombresTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -124,6 +124,15 @@
             telefonoLabel.TabIndex = 20;
             telefonoLabel.Text = "Telefono:";
             // 
+            // banqueraIdLabel
+            // 
+            banqueraIdLabel.AutoSize = true;
+            banqueraIdLabel.Location = new System.Drawing.Point(12, 25);
+            banqueraIdLabel.Name = "banqueraIdLabel";
+            banqueraIdLabel.Size = new System.Drawing.Size(84, 16);
+            banqueraIdLabel.TabIndex = 23;
+            banqueraIdLabel.Text = "Banquera Id:";
+            // 
             // nombresTextBox
             // 
             this.nombresTextBox.Location = new System.Drawing.Point(85, 61);
@@ -199,7 +208,7 @@
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Deletebutton.Location = new System.Drawing.Point(12, 16);
             this.Deletebutton.Name = "Deletebutton";
-            this.Deletebutton.Size = new System.Drawing.Size(74, 48);
+            this.Deletebutton.Size = new System.Drawing.Size(74, 54);
             this.Deletebutton.TabIndex = 13;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,7 +220,7 @@
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.Location = new System.Drawing.Point(189, 15);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(74, 49);
+            this.SaveButton.Size = new System.Drawing.Size(74, 58);
             this.SaveButton.TabIndex = 14;
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -225,20 +234,11 @@
             this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.UpdateButton.Location = new System.Drawing.Point(100, 79);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(77, 49);
+            this.UpdateButton.Size = new System.Drawing.Size(77, 54);
             this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // banqueraIdLabel
-            // 
-            banqueraIdLabel.AutoSize = true;
-            banqueraIdLabel.Location = new System.Drawing.Point(12, 25);
-            banqueraIdLabel.Name = "banqueraIdLabel";
-            banqueraIdLabel.Size = new System.Drawing.Size(84, 16);
-            banqueraIdLabel.TabIndex = 23;
-            banqueraIdLabel.Text = "Banquera Id:";
             // 
             // banqueraIdTextBox
             // 
