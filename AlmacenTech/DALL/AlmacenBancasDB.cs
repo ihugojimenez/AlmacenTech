@@ -16,5 +16,6 @@ namespace DALL
         }
 
         public virtual DbSet<Usuarios> usuario { get; set; }
+        public virtual DbSet<Equipos> equipo { get; set; }
     }
 }

@@ -48,7 +48,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(376, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -58,7 +58,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(645, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellido";
             // 
@@ -82,13 +82,13 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(376, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.Size = new System.Drawing.Size(131, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Nombre de Usuario";
             // 
             // UserNameTextBox
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(536, 121);
+            this.UserNameTextBox.Location = new System.Drawing.Point(513, 119);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(188, 22);
             this.UserNameTextBox.TabIndex = 5;
@@ -99,13 +99,13 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(382, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 20);
+            this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Contraseña";
             // 
             // PassTextBox
             // 
-            this.PassTextBox.Location = new System.Drawing.Point(492, 171);
+            this.PassTextBox.Location = new System.Drawing.Point(469, 169);
             this.PassTextBox.Name = "PassTextBox";
             this.PassTextBox.Size = new System.Drawing.Size(232, 22);
             this.PassTextBox.TabIndex = 7;
@@ -116,13 +116,13 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(382, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 20);
+            this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Confirmar contraseña";
             // 
             // ConfPassTextBox
             // 
-            this.ConfPassTextBox.Location = new System.Drawing.Point(559, 225);
+            this.ConfPassTextBox.Location = new System.Drawing.Point(532, 223);
             this.ConfPassTextBox.Name = "ConfPassTextBox";
             this.ConfPassTextBox.Size = new System.Drawing.Size(165, 22);
             this.ConfPassTextBox.TabIndex = 9;

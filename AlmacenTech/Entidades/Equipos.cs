@@ -11,9 +11,9 @@ namespace Entidades
     {
         [Key]
         public int EquipoId { get; set; }
-        public string Marca { get; set; }
-        public string Tipo { get; set; }
-        public string Serial { get; set; }
+        public string MarcaEquipo { get; set; }
+        public string TipoEquipo { get; set; }
+        public string SerialNum { get; set; }
 
         public Equipos()
         {
