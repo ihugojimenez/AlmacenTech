@@ -35,6 +35,12 @@ namespace AlmacenTech
 
             MensajerosForm mf = new MensajerosForm();
             mf.Show();
+
+            PrestamosForm pf = new PrestamosForm();
+            pf.Show();
+
+            RutasForm ruf = new RutasForm();
+            ruf.Show();
            /* EquiposForm ef = new EquiposForm();
             ef.Show();*/
         }
