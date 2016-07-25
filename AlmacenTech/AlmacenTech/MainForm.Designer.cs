@@ -36,6 +36,10 @@
             this.registrarEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeTiposDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeMensajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +47,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem});
+            this.archivoToolStripMenuItem,
+            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(911, 28);
@@ -105,6 +110,37 @@
             this.registroDeTiposDeEquiposToolStripMenuItem.Text = "Registro de Tipos de Equipos";
             this.registroDeTiposDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeEquiposToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaDeUsuariosToolStripMenuItem,
+            this.consultaDeMensajerosToolStripMenuItem,
+            this.consultaDeEquiposToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // consultaDeUsuariosToolStripMenuItem
+            // 
+            this.consultaDeUsuariosToolStripMenuItem.Name = "consultaDeUsuariosToolStripMenuItem";
+            this.consultaDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.consultaDeUsuariosToolStripMenuItem.Text = "Consulta de Usuarios";
+            this.consultaDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeUsuariosToolStripMenuItem_Click);
+            // 
+            // consultaDeMensajerosToolStripMenuItem
+            // 
+            this.consultaDeMensajerosToolStripMenuItem.Name = "consultaDeMensajerosToolStripMenuItem";
+            this.consultaDeMensajerosToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.consultaDeMensajerosToolStripMenuItem.Text = "Consulta de Mensajeros";
+            this.consultaDeMensajerosToolStripMenuItem.Click += new System.EventHandler(this.consultaDeMensajerosToolStripMenuItem_Click);
+            // 
+            // consultaDeEquiposToolStripMenuItem
+            // 
+            this.consultaDeEquiposToolStripMenuItem.Name = "consultaDeEquiposToolStripMenuItem";
+            this.consultaDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.consultaDeEquiposToolStripMenuItem.Text = "Consulta de Equipos";
+            this.consultaDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEquiposToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -134,5 +170,9 @@
         private System.Windows.Forms.ToolStripMenuItem registrarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeTiposDeEquiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeMensajerosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeEquiposToolStripMenuItem;
     }
 }

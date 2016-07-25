@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlmacenTech.Consultas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,6 +62,24 @@ namespace AlmacenTech
         {
             rTiposEquipos rte = new rTiposEquipos();
             rte.Show();
+        }
+
+        private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaUsuarios cu = new ConsultaUsuarios();
+            cu.Show();
+        }
+
+        private void consultaDeMensajerosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaMensajerosForm cm = new ConsultaMensajerosForm();
+            cm.Show();
+        }
+
+        private void consultaDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaEquiposForm CE = new ConsultaEquiposForm();
+            CE.Show();
         }
     }
 }

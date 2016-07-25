@@ -79,6 +79,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTechDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaEquiposForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaEquiposForm.Designer.cs">
+      <DependentUpon>ConsultaEquiposForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMensajerosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaMensajerosForm.Designer.cs">
+      <DependentUpon>ConsultaMensajerosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaUsuarios.Designer.cs">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntradasForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,15 @@
     <Compile Include="RutasForm.Designer.cs">
       <DependentUpon>RutasForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\ConsultaEquiposForm.resx">
+      <DependentUpon>ConsultaEquiposForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaMensajerosForm.resx">
+      <DependentUpon>ConsultaMensajerosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaUsuarios.resx">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,6 +210,7 @@
     <EmbeddedResource Include="RegistroBanquerasForm.resx">
       <DependentUpon>RegistroBanquerasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListarEquipos.rdlc" />
     <EmbeddedResource Include="rTiposEquipos.resx">
       <DependentUpon>rTiposEquipos.cs</DependentUpon>
     </EmbeddedResource>
