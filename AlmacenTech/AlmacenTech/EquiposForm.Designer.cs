@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label marcaEquipoLabel;
             System.Windows.Forms.Label serialNumLabel;
             System.Windows.Forms.Label equipoIdLabel;
@@ -42,17 +43,19 @@
             this.Deletebutton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ButtonsgroupBox = new System.Windows.Forms.GroupBox();
+            this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             marcaEquipoLabel = new System.Windows.Forms.Label();
             serialNumLabel = new System.Windows.Forms.Label();
             equipoIdLabel = new System.Windows.Forms.Label();
             tipoEquipoLabel = new System.Windows.Forms.Label();
             this.ButtonsgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // marcaEquipoLabel
             // 
             marcaEquipoLabel.AutoSize = true;
-            marcaEquipoLabel.Location = new System.Drawing.Point(12, 97);
+            marcaEquipoLabel.Location = new System.Drawing.Point(3, 54);
             marcaEquipoLabel.Name = "marcaEquipoLabel";
             marcaEquipoLabel.Size = new System.Drawing.Size(99, 17);
             marcaEquipoLabel.TabIndex = 3;
@@ -61,7 +64,7 @@
             // serialNumLabel
             // 
             serialNumLabel.AutoSize = true;
-            serialNumLabel.Location = new System.Drawing.Point(12, 57);
+            serialNumLabel.Location = new System.Drawing.Point(1, 99);
             serialNumLabel.Name = "serialNumLabel";
             serialNumLabel.Size = new System.Drawing.Size(81, 17);
             serialNumLabel.TabIndex = 5;
@@ -87,14 +90,14 @@
             // 
             // marcaEquipoTextBox
             // 
-            this.marcaEquipoTextBox.Location = new System.Drawing.Point(113, 91);
+            this.marcaEquipoTextBox.Location = new System.Drawing.Point(108, 54);
             this.marcaEquipoTextBox.Name = "marcaEquipoTextBox";
             this.marcaEquipoTextBox.Size = new System.Drawing.Size(210, 22);
             this.marcaEquipoTextBox.TabIndex = 4;
             // 
             // serialNumTextBox
             // 
-            this.serialNumTextBox.Location = new System.Drawing.Point(95, 54);
+            this.serialNumTextBox.Location = new System.Drawing.Point(88, 96);
             this.serialNumTextBox.Name = "serialNumTextBox";
             this.serialNumTextBox.Size = new System.Drawing.Size(228, 22);
             this.serialNumTextBox.TabIndex = 6;
@@ -128,6 +131,7 @@
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // searchButton
             // 
@@ -142,6 +146,7 @@
             this.searchButton.Text = "Buscar";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Deletebutton
             // 
@@ -156,6 +161,7 @@
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // SaveButton
             // 
@@ -182,6 +188,10 @@
             this.ButtonsgroupBox.TabStop = false;
             this.ButtonsgroupBox.Text = "Opciones";
             // 
+            // BuscarerrorProvider
+            // 
+            this.BuscarerrorProvider.ContainerControl = this;
+            // 
             // EquiposForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,6 +215,7 @@
             this.Text = "Registro de Equipos";
             this.Load += new System.EventHandler(this.EquiposForm_Load);
             this.ButtonsgroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +232,6 @@
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.GroupBox ButtonsgroupBox;
+        private System.Windows.Forms.ErrorProvider BuscarerrorProvider;
     }
 }

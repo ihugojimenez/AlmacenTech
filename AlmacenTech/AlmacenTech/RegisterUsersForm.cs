@@ -20,18 +20,80 @@ namespace AlmacenTech
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RegisterUsersForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void searchButton_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(IDtextBox.Text))
+            {
+                BuscarerrorProvider.SetError(IDtextBox, "Favor digitar el ID del Usuario que desea buscar");
+            }
+            else
+            {
+                LLenar(UsuariosBLL.Buscar(Convert.ToInt32(IDtextBox.Text)));
+                limpiar();
+            }
+
+        }
+
+        private void Deletebutton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(IDtextBox.Text))
+            {
+                BuscarerrorProvider.SetError(IDtextBox, "Favor digitar el ID del Usuario que desea eliminar");
+            }
+            else
+            {
+                BuscarerrorProvider.Clear();
+                UsuariosBLL.Eliminar(Convert.ToInt32(IDtextBox.Text));
+                limpiar();
+            }
+
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+
+            //string aux = ConfPassTextBox.Text;
+            if (string.IsNullOrEmpty(IDtextBox.Text))
+            {
+                BuscarerrorProvider.SetError(IDtextBox, "Favor buscar el ID del Usuario que desea actualizar");
+            }
+            else
+            {
+                BuscarerrorProvider.Clear();
+                if (ConfPassTextBox.Text != PassTextBox.Text)
+                {
+                    PasworderrorProvider.SetError(ConfPassTextBox, "Las contraseñas no coinciden");
+                }
+                else
+                {
+
+
+                    if (PassTextBox.Text == "" || NameTextBox.Text == " " || ApellidoTextBox.Text == " " || UserNameTextBox.Text == " " || ConfPassTextBox.Text == "")
+                    {
+                        MessageBox.Show("Buscar el ID del usuario que desea Actualizar");
+                    }
+                    else
+                    {
+                        PasworderrorProvider.Clear();
+                        UsuariosBLL.Actualizar(Convert.ToInt32(IDtextBox.Text), NameTextBox.Text, ApellidoTextBox.Text, UserNameTextBox.Text, PassTextBox.Text);
+                        limpiar();
+                    }
+
+
+                }
+
+            }
+
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             Usuarios us = new Usuarios();
             string aux = ConfPassTextBox.Text;
             us.Apellido = ApellidoTextBox.Text;
@@ -57,34 +119,9 @@ namespace AlmacenTech
                 }
             }
             
-            
-
-
-            /*us.Apellido = "Jimenez";
-            us.Nombre = "Hugo";
-            us.NombreUsuario = "Hugo5";
-            us.Contraseña = "Pass22";*/
-
-            /*Equipos eq = new Equipos();
-            eq.MarcaEquipo = "Dell";
-            eq.SerialNum = "12-56-89-74445";
-            eq.TipoEquipo = "Cpu";*/
-
-           
+    
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(IDtextBox.Text))
-            {
-                BuscarerrorProvider.SetError(IDtextBox, "Favor digitar el ID del Usuario que desea buscar");
-            }else
-            {
-                LLenar(UsuariosBLL.Buscar(Convert.ToInt32(IDtextBox.Text)));
-                limpiar();
-            }
-            
-        }
 
         private void LLenar(Usuarios usuario)
         {
@@ -95,20 +132,7 @@ namespace AlmacenTech
             PassTextBox.Text = usuario.Contraseña;
         }
 
-        private void Deletebutton_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(IDtextBox.Text))
-            {
-                BuscarerrorProvider.SetError(IDtextBox, "Favor digitar el ID del Usuario que desea eliminar");
-            }
-            else
-            {
-                BuscarerrorProvider.Clear();
-                UsuariosBLL.Eliminar(Convert.ToInt32(IDtextBox.Text));
-                limpiar();
-            }
 
-        }
 
         private void limpiar()
         {
@@ -120,44 +144,6 @@ namespace AlmacenTech
             
         }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-           
-            //string aux = ConfPassTextBox.Text;
-            if (string.IsNullOrEmpty(IDtextBox.Text))
-            {
-                BuscarerrorProvider.SetError(IDtextBox, "Favor buscar el ID del Usuario que desea actualizar");
-            }
-            else
-            {
-                BuscarerrorProvider.Clear();
-                if(ConfPassTextBox.Text != PassTextBox.Text)
-                {
-                    PasworderrorProvider.SetError(ConfPassTextBox, "Las contraseñas no coinciden");
-                }
-                else
-                {
 
-
-                    if (PassTextBox.Text == "" || NameTextBox.Text == " " || ApellidoTextBox.Text == " " || UserNameTextBox.Text == " " || ConfPassTextBox.Text == "")
-                    {
-                        MessageBox.Show("Buscar el ID del usuario que desea Actualizar");
-                    }
-                    else
-                    {
-                        PasworderrorProvider.Clear();
-                        UsuariosBLL.Actualizar(Convert.ToInt32(IDtextBox.Text), NameTextBox.Text, ApellidoTextBox.Text, UserNameTextBox.Text, PassTextBox.Text);
-                        limpiar();
-                    }
-
-                    
-                }
-                
-                
-                
-                
-            }
-
-        }
     }
 }
