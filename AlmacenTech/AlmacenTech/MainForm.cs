@@ -56,5 +56,11 @@ namespace AlmacenTech
             Ru.MdiParent = this;
             Ru.Show();
         }
+
+        private void registroDeTiposDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rTiposEquipos rte = new rTiposEquipos();
+            rte.Show();
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +23,19 @@ namespace AlmacenTech
 
         private void EquiposForm_Load(object sender, EventArgs e)
         {
-            
+            tipoEquipoComboBox.DataSource = TiposEquiposBLL.GetLista();
+            tipoEquipoComboBox.ValueMember = "TipoId";
+            tipoEquipoComboBox.DisplayMember = "Detalle";
 
         }
 
-        
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Equipos E = new Equipos();
+            E.MarcaEquipo = marcaEquipoTextBox.Text;
+            E.SerialNum = serialNumTextBox.Text;
+            E.TipoId = (int)tipoEquipoComboBox.SelectedValue;
+            EquiposBLL.AgregarEquipo(E);
+        }
     }
 }

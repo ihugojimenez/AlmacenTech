@@ -12,12 +12,14 @@ namespace Entidades
         [Key]
         public int EquipoId { get; set; }
         public string MarcaEquipo { get; set; }
-        public string TipoEquipo { get; set; }
+        public int TipoId { get; set; }
         public string SerialNum { get; set; }
 
         public Equipos()
         {
 
         }
+
+        public virtual TiposEquipos TiposEquipos { get; set; }
     }
 }

@@ -54,9 +54,36 @@
             marcaEquipoLabel.AutoSize = true;
             marcaEquipoLabel.Location = new System.Drawing.Point(12, 97);
             marcaEquipoLabel.Name = "marcaEquipoLabel";
-            marcaEquipoLabel.Size = new System.Drawing.Size(95, 16);
+            marcaEquipoLabel.Size = new System.Drawing.Size(99, 17);
             marcaEquipoLabel.TabIndex = 3;
             marcaEquipoLabel.Text = "Marca Equipo:";
+            // 
+            // serialNumLabel
+            // 
+            serialNumLabel.AutoSize = true;
+            serialNumLabel.Location = new System.Drawing.Point(12, 57);
+            serialNumLabel.Name = "serialNumLabel";
+            serialNumLabel.Size = new System.Drawing.Size(81, 17);
+            serialNumLabel.TabIndex = 5;
+            serialNumLabel.Text = "Serial Num:";
+            // 
+            // equipoIdLabel
+            // 
+            equipoIdLabel.AutoSize = true;
+            equipoIdLabel.Location = new System.Drawing.Point(11, 9);
+            equipoIdLabel.Name = "equipoIdLabel";
+            equipoIdLabel.Size = new System.Drawing.Size(71, 17);
+            equipoIdLabel.TabIndex = 7;
+            equipoIdLabel.Text = "Equipo Id:";
+            // 
+            // tipoEquipoLabel
+            // 
+            tipoEquipoLabel.AutoSize = true;
+            tipoEquipoLabel.Location = new System.Drawing.Point(12, 137);
+            tipoEquipoLabel.Name = "tipoEquipoLabel";
+            tipoEquipoLabel.Size = new System.Drawing.Size(88, 17);
+            tipoEquipoLabel.TabIndex = 9;
+            tipoEquipoLabel.Text = "Tipo Equipo:";
             // 
             // marcaEquipoTextBox
             // 
@@ -65,15 +92,6 @@
             this.marcaEquipoTextBox.Size = new System.Drawing.Size(210, 22);
             this.marcaEquipoTextBox.TabIndex = 4;
             // 
-            // serialNumLabel
-            // 
-            serialNumLabel.AutoSize = true;
-            serialNumLabel.Location = new System.Drawing.Point(12, 57);
-            serialNumLabel.Name = "serialNumLabel";
-            serialNumLabel.Size = new System.Drawing.Size(77, 16);
-            serialNumLabel.TabIndex = 5;
-            serialNumLabel.Text = "Serial Num:";
-            // 
             // serialNumTextBox
             // 
             this.serialNumTextBox.Location = new System.Drawing.Point(95, 54);
@@ -81,30 +99,12 @@
             this.serialNumTextBox.Size = new System.Drawing.Size(228, 22);
             this.serialNumTextBox.TabIndex = 6;
             // 
-            // equipoIdLabel
-            // 
-            equipoIdLabel.AutoSize = true;
-            equipoIdLabel.Location = new System.Drawing.Point(11, 9);
-            equipoIdLabel.Name = "equipoIdLabel";
-            equipoIdLabel.Size = new System.Drawing.Size(68, 16);
-            equipoIdLabel.TabIndex = 7;
-            equipoIdLabel.Text = "Equipo Id:";
-            // 
             // equipoIdTextBox
             // 
             this.equipoIdTextBox.Location = new System.Drawing.Point(85, 6);
             this.equipoIdTextBox.Name = "equipoIdTextBox";
             this.equipoIdTextBox.Size = new System.Drawing.Size(22, 22);
             this.equipoIdTextBox.TabIndex = 8;
-            // 
-            // tipoEquipoLabel
-            // 
-            tipoEquipoLabel.AutoSize = true;
-            tipoEquipoLabel.Location = new System.Drawing.Point(12, 137);
-            tipoEquipoLabel.Name = "tipoEquipoLabel";
-            tipoEquipoLabel.Size = new System.Drawing.Size(85, 16);
-            tipoEquipoLabel.TabIndex = 9;
-            tipoEquipoLabel.Text = "Tipo Equipo:";
             // 
             // tipoEquipoComboBox
             // 
@@ -168,6 +168,7 @@
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ButtonsgroupBox
             // 

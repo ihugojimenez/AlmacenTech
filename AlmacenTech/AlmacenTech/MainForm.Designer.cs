@@ -35,16 +35,18 @@
             this.registrarBancaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTiposDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(911, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(911, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -55,45 +57,53 @@
             this.registrarBanqueraToolStripMenuItem,
             this.registrarBancaToolStripMenuItem,
             this.registrarEquiposToolStripMenuItem,
-            this.registroDeUsuariosToolStripMenuItem});
+            this.registroDeUsuariosToolStripMenuItem,
+            this.registroDeTiposDeEquiposToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // registrarMensajeroToolStripMenuItem
             // 
             this.registrarMensajeroToolStripMenuItem.Name = "registrarMensajeroToolStripMenuItem";
-            this.registrarMensajeroToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registrarMensajeroToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
             this.registrarMensajeroToolStripMenuItem.Text = "Registrar Mensajeros";
             this.registrarMensajeroToolStripMenuItem.Click += new System.EventHandler(this.registrarMensajeroToolStripMenuItem_Click);
             // 
             // registrarBanqueraToolStripMenuItem
             // 
             this.registrarBanqueraToolStripMenuItem.Name = "registrarBanqueraToolStripMenuItem";
-            this.registrarBanqueraToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registrarBanqueraToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
             this.registrarBanqueraToolStripMenuItem.Text = "Registrar Banqueras";
             this.registrarBanqueraToolStripMenuItem.Click += new System.EventHandler(this.registrarBanqueraToolStripMenuItem_Click);
             // 
             // registrarBancaToolStripMenuItem
             // 
             this.registrarBancaToolStripMenuItem.Name = "registrarBancaToolStripMenuItem";
-            this.registrarBancaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registrarBancaToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
             this.registrarBancaToolStripMenuItem.Text = "Registrar Bancas";
             this.registrarBancaToolStripMenuItem.Click += new System.EventHandler(this.registrarBancaToolStripMenuItem_Click);
             // 
             // registrarEquiposToolStripMenuItem
             // 
             this.registrarEquiposToolStripMenuItem.Name = "registrarEquiposToolStripMenuItem";
-            this.registrarEquiposToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registrarEquiposToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
             this.registrarEquiposToolStripMenuItem.Text = "Registrar Equipos";
             this.registrarEquiposToolStripMenuItem.Click += new System.EventHandler(this.registrarEquiposToolStripMenuItem_Click);
             // 
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroDeUsuariosToolStripMenuItem_Click);
+            // 
+            // registroDeTiposDeEquiposToolStripMenuItem
+            // 
+            this.registroDeTiposDeEquiposToolStripMenuItem.Name = "registroDeTiposDeEquiposToolStripMenuItem";
+            this.registroDeTiposDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
+            this.registroDeTiposDeEquiposToolStripMenuItem.Text = "Registro de Tipos de Equipos";
+            this.registroDeTiposDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeEquiposToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -123,5 +133,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarBancaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeTiposDeEquiposToolStripMenuItem;
     }
 }

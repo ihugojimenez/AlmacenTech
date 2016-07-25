@@ -62,5 +62,29 @@ namespace BLL
             u.NombreUsuario = usuario;
             db.SaveChanges();
         }
+
+        public static List<Usuarios> GetLista()
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.ToList();
+
+            return lista;
+
+        }
+
+        public static List<Usuarios> GetListaId(int id)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.Where(p=> p.UsuarioId==id).ToList();
+
+            return lista;
+
+        }
     }
 }

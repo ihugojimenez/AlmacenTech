@@ -53,6 +53,7 @@ namespace AlmacenTech
                 else
                 {
                     UsuariosBLL.AgregarUsuario(us);
+                    limpiar();
                 }
             }
             
@@ -80,6 +81,7 @@ namespace AlmacenTech
             }else
             {
                 LLenar(UsuariosBLL.Buscar(Convert.ToInt32(IDtextBox.Text)));
+                limpiar();
             }
             
         }
@@ -103,6 +105,7 @@ namespace AlmacenTech
             {
                 BuscarerrorProvider.Clear();
                 UsuariosBLL.Eliminar(Convert.ToInt32(IDtextBox.Text));
+                limpiar();
             }
 
         }
