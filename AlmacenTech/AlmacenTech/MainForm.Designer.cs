@@ -34,6 +34,7 @@
             this.registrarBanqueraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarBancaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.registrarMensajeroToolStripMenuItem,
             this.registrarBanqueraToolStripMenuItem,
             this.registrarBancaToolStripMenuItem,
-            this.registrarEquiposToolStripMenuItem});
+            this.registrarEquiposToolStripMenuItem,
+            this.registroDeUsuariosToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
@@ -86,6 +88,13 @@
             this.registrarEquiposToolStripMenuItem.Text = "Registrar Equipos";
             this.registrarEquiposToolStripMenuItem.Click += new System.EventHandler(this.registrarEquiposToolStripMenuItem_Click);
             // 
+            // registroDeUsuariosToolStripMenuItem
+            // 
+            this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
+            this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroDeUsuariosToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -113,5 +122,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarBanqueraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarBancaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarEquiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeUsuariosToolStripMenuItem;
     }
 }

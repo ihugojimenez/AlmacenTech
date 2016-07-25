@@ -217,6 +217,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{0969265E-64FE-42F2-98F4-BFCACD03E08A}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DALL\DALL.csproj">
       <Project>{6f24d062-facd-4868-bca8-2b78e9f7ce7e}</Project>
       <Name>DALL</Name>

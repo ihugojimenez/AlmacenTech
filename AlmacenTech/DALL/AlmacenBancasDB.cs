@@ -10,7 +10,7 @@ namespace DALL
 {
     public class AlmacenBancasDB : DbContext
     {
-        public AlmacenBancasDB() : base("name = AlmacenDb") 
+        public AlmacenBancasDB() : base("name = AlmacenDbAux") 
         {
             
         }

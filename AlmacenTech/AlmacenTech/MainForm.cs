@@ -49,5 +49,12 @@ namespace AlmacenTech
             EF.MdiParent = this;
             EF.Show();
         }
+
+        private void registroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterUsersForm Ru = new RegisterUsersForm();
+            Ru.MdiParent = this;
+            Ru.Show();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterUsersForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,14 +45,20 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
+            this.PasworderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.IDtextBox = new System.Windows.Forms.TextBox();
+            this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ButtonsgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PasworderrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 42);
+            this.label1.Location = new System.Drawing.Point(4, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
@@ -61,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 80);
+            this.label2.Location = new System.Drawing.Point(4, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 1;
@@ -70,14 +77,14 @@
             // NameTextBox
             // 
             this.NameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.NameTextBox.Location = new System.Drawing.Point(83, 40);
+            this.NameTextBox.Location = new System.Drawing.Point(83, 56);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(252, 22);
             this.NameTextBox.TabIndex = 2;
             // 
             // ApellidoTextBox
             // 
-            this.ApellidoTextBox.Location = new System.Drawing.Point(84, 80);
+            this.ApellidoTextBox.Location = new System.Drawing.Point(84, 96);
             this.ApellidoTextBox.Name = "ApellidoTextBox";
             this.ApellidoTextBox.Size = new System.Drawing.Size(252, 22);
             this.ApellidoTextBox.TabIndex = 3;
@@ -86,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 113);
+            this.label3.Location = new System.Drawing.Point(4, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 17);
             this.label3.TabIndex = 4;
@@ -94,7 +101,7 @@
             // 
             // UserNameTextBox
             // 
-            this.UserNameTextBox.Location = new System.Drawing.Point(179, 113);
+            this.UserNameTextBox.Location = new System.Drawing.Point(179, 129);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(183, 22);
             this.UserNameTextBox.TabIndex = 5;
@@ -103,7 +110,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 146);
+            this.label4.Location = new System.Drawing.Point(4, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 6;
@@ -111,7 +118,7 @@
             // 
             // PassTextBox
             // 
-            this.PassTextBox.Location = new System.Drawing.Point(115, 146);
+            this.PassTextBox.Location = new System.Drawing.Point(115, 162);
             this.PassTextBox.Name = "PassTextBox";
             this.PassTextBox.Size = new System.Drawing.Size(230, 22);
             this.PassTextBox.TabIndex = 7;
@@ -120,7 +127,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 183);
+            this.label5.Location = new System.Drawing.Point(4, 199);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 17);
             this.label5.TabIndex = 8;
@@ -128,7 +135,7 @@
             // 
             // ConfPassTextBox
             // 
-            this.ConfPassTextBox.Location = new System.Drawing.Point(197, 183);
+            this.ConfPassTextBox.Location = new System.Drawing.Point(197, 199);
             this.ConfPassTextBox.Name = "ConfPassTextBox";
             this.ConfPassTextBox.Size = new System.Drawing.Size(143, 22);
             this.ConfPassTextBox.TabIndex = 9;
@@ -158,6 +165,7 @@
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // SaveButton
             // 
@@ -170,6 +178,7 @@
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // UpdateButton
             // 
@@ -184,6 +193,7 @@
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // searchButton
             // 
@@ -191,13 +201,39 @@
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.searchButton.Location = new System.Drawing.Point(350, 40);
+            this.searchButton.Location = new System.Drawing.Point(101, 12);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(81, 36);
             this.searchButton.TabIndex = 16;
             this.searchButton.Text = "Buscar";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // PasworderrorProvider
+            // 
+            this.PasworderrorProvider.ContainerControl = this;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 17);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "ID";
+            // 
+            // IDtextBox
+            // 
+            this.IDtextBox.Location = new System.Drawing.Point(39, 18);
+            this.IDtextBox.Name = "IDtextBox";
+            this.IDtextBox.Size = new System.Drawing.Size(30, 22);
+            this.IDtextBox.TabIndex = 19;
+            // 
+            // BuscarerrorProvider
+            // 
+            this.BuscarerrorProvider.ContainerControl = this;
             // 
             // RegisterUsersForm
             // 
@@ -207,6 +243,8 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(447, 317);
+            this.Controls.Add(this.IDtextBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.ButtonsgroupBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.ConfPassTextBox);
@@ -227,6 +265,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Usuarios";
             this.ButtonsgroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PasworderrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +289,9 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.ErrorProvider PasworderrorProvider;
+        private System.Windows.Forms.TextBox IDtextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider BuscarerrorProvider;
     }
 }
