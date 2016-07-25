@@ -28,91 +28,153 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroBancasForm));
             System.Windows.Forms.Label banqueraIdLabel;
             System.Windows.Forms.Label equipoIdLabel;
             System.Windows.Forms.Label rutaIdLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroBancasForm));
-            this.banqueraIdTextBox = new System.Windows.Forms.TextBox();
-            this.equipoIdTextBox = new System.Windows.Forms.TextBox();
-            this.rutaIdTextBox = new System.Windows.Forms.TextBox();
-            this.SaveButton = new System.Windows.Forms.Button();
+            System.Windows.Forms.Label bancaIdLabel;
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
+            this.banqueraIdComboBox = new System.Windows.Forms.ComboBox();
+            this.equipoIdComboBox = new System.Windows.Forms.ComboBox();
+            this.rutaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.bancaIdTextBox = new System.Windows.Forms.TextBox();
+            this.Addbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             banqueraIdLabel = new System.Windows.Forms.Label();
             equipoIdLabel = new System.Windows.Forms.Label();
             rutaIdLabel = new System.Windows.Forms.Label();
+            bancaIdLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // banqueraIdLabel
+            // UpdateButton
             // 
-            banqueraIdLabel.AutoSize = true;
-            banqueraIdLabel.Location = new System.Drawing.Point(12, 21);
-            banqueraIdLabel.Name = "banqueraIdLabel";
-            banqueraIdLabel.Size = new System.Drawing.Size(84, 16);
-            banqueraIdLabel.TabIndex = 3;
-            banqueraIdLabel.Text = "Banquera Id:";
-            // 
-            // equipoIdLabel
-            // 
-            equipoIdLabel.AutoSize = true;
-            equipoIdLabel.Location = new System.Drawing.Point(13, 68);
-            equipoIdLabel.Name = "equipoIdLabel";
-            equipoIdLabel.Size = new System.Drawing.Size(68, 16);
-            equipoIdLabel.TabIndex = 5;
-            equipoIdLabel.Text = "Equipo Id:";
-            // 
-            // rutaIdLabel
-            // 
-            rutaIdLabel.AutoSize = true;
-            rutaIdLabel.Location = new System.Drawing.Point(149, 21);
-            rutaIdLabel.Name = "rutaIdLabel";
-            rutaIdLabel.Size = new System.Drawing.Size(53, 16);
-            rutaIdLabel.TabIndex = 7;
-            rutaIdLabel.Text = "Ruta Id:";
-            // 
-            // banqueraIdTextBox
-            // 
-            this.banqueraIdTextBox.Location = new System.Drawing.Point(102, 21);
-            this.banqueraIdTextBox.Name = "banqueraIdTextBox";
-            this.banqueraIdTextBox.Size = new System.Drawing.Size(27, 22);
-            this.banqueraIdTextBox.TabIndex = 4;
-            // 
-            // equipoIdTextBox
-            // 
-            this.equipoIdTextBox.Location = new System.Drawing.Point(86, 65);
-            this.equipoIdTextBox.Name = "equipoIdTextBox";
-            this.equipoIdTextBox.Size = new System.Drawing.Size(56, 22);
-            this.equipoIdTextBox.TabIndex = 6;
-            // 
-            // rutaIdTextBox
-            // 
-            this.rutaIdTextBox.Location = new System.Drawing.Point(208, 18);
-            this.rutaIdTextBox.Name = "rutaIdTextBox";
-            this.rutaIdTextBox.Size = new System.Drawing.Size(24, 22);
-            this.rutaIdTextBox.TabIndex = 8;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
-            this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(12, 144);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(84, 51);
-            this.SaveButton.TabIndex = 9;
-            this.SaveButton.Text = "Guardar";
-            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateButton.Image")));
+            this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.UpdateButton.Location = new System.Drawing.Point(379, 191);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(84, 51);
+            this.UpdateButton.TabIndex = 9;
+            this.UpdateButton.Text = "Guardar";
+            this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // EliminarButton
             // 
             this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EliminarButton.Location = new System.Drawing.Point(175, 144);
+            this.EliminarButton.Location = new System.Drawing.Point(507, 191);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(69, 51);
             this.EliminarButton.TabIndex = 10;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // banqueraIdLabel
+            // 
+            banqueraIdLabel.AutoSize = true;
+            banqueraIdLabel.Location = new System.Drawing.Point(337, 14);
+            banqueraIdLabel.Name = "banqueraIdLabel";
+            banqueraIdLabel.Size = new System.Drawing.Size(89, 17);
+            banqueraIdLabel.TabIndex = 11;
+            banqueraIdLabel.Text = "Banquera Id:";
+            // 
+            // banqueraIdComboBox
+            // 
+            this.banqueraIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.banqueraIdComboBox.FormattingEnabled = true;
+            this.banqueraIdComboBox.Location = new System.Drawing.Point(432, 11);
+            this.banqueraIdComboBox.Name = "banqueraIdComboBox";
+            this.banqueraIdComboBox.Size = new System.Drawing.Size(121, 24);
+            this.banqueraIdComboBox.TabIndex = 12;
+            // 
+            // equipoIdLabel
+            // 
+            equipoIdLabel.AutoSize = true;
+            equipoIdLabel.Location = new System.Drawing.Point(337, 77);
+            equipoIdLabel.Name = "equipoIdLabel";
+            equipoIdLabel.Size = new System.Drawing.Size(71, 17);
+            equipoIdLabel.TabIndex = 12;
+            equipoIdLabel.Text = "Equipo Id:";
+            // 
+            // equipoIdComboBox
+            // 
+            this.equipoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.equipoIdComboBox.FormattingEnabled = true;
+            this.equipoIdComboBox.Location = new System.Drawing.Point(414, 74);
+            this.equipoIdComboBox.Name = "equipoIdComboBox";
+            this.equipoIdComboBox.Size = new System.Drawing.Size(139, 24);
+            this.equipoIdComboBox.TabIndex = 13;
+            // 
+            // rutaIdLabel
+            // 
+            rutaIdLabel.AutoSize = true;
+            rutaIdLabel.Location = new System.Drawing.Point(337, 154);
+            rutaIdLabel.Name = "rutaIdLabel";
+            rutaIdLabel.Size = new System.Drawing.Size(57, 17);
+            rutaIdLabel.TabIndex = 13;
+            rutaIdLabel.Text = "Ruta Id:";
+            // 
+            // rutaIdComboBox
+            // 
+            this.rutaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rutaIdComboBox.FormattingEnabled = true;
+            this.rutaIdComboBox.Location = new System.Drawing.Point(400, 151);
+            this.rutaIdComboBox.Name = "rutaIdComboBox";
+            this.rutaIdComboBox.Size = new System.Drawing.Size(153, 24);
+            this.rutaIdComboBox.TabIndex = 14;
+            // 
+            // bancaIdLabel
+            // 
+            bancaIdLabel.AutoSize = true;
+            bancaIdLabel.Location = new System.Drawing.Point(12, 32);
+            bancaIdLabel.Name = "bancaIdLabel";
+            bancaIdLabel.Size = new System.Drawing.Size(67, 17);
+            bancaIdLabel.TabIndex = 14;
+            bancaIdLabel.Text = "Banca Id:";
+            // 
+            // bancaIdTextBox
+            // 
+            this.bancaIdTextBox.Location = new System.Drawing.Point(85, 32);
+            this.bancaIdTextBox.Name = "bancaIdTextBox";
+            this.bancaIdTextBox.Size = new System.Drawing.Size(100, 22);
+            this.bancaIdTextBox.TabIndex = 15;
+            // 
+            // Addbutton
+            // 
+            this.Addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbutton.Image = ((System.Drawing.Image)(resources.GetObject("Addbutton.Image")));
+            this.Addbutton.Location = new System.Drawing.Point(258, 191);
+            this.Addbutton.Name = "Addbutton";
+            this.Addbutton.Size = new System.Drawing.Size(74, 51);
+            this.Addbutton.TabIndex = 27;
+            this.Addbutton.Text = "Agregar";
+            this.Addbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Buscarbutton.Location = new System.Drawing.Point(218, 14);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 43);
+            this.Buscarbutton.TabIndex = 28;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // BuscarerrorProvider
+            // 
+            this.BuscarerrorProvider.ContainerControl = this;
             // 
             // RegistroBancasForm
             // 
@@ -120,31 +182,40 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(282, 223);
-            this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.SaveButton);
+            this.ClientSize = new System.Drawing.Size(588, 254);
+            this.Controls.Add(this.Addbutton);
+            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(bancaIdLabel);
+            this.Controls.Add(this.bancaIdTextBox);
             this.Controls.Add(rutaIdLabel);
-            this.Controls.Add(this.rutaIdTextBox);
+            this.Controls.Add(this.rutaIdComboBox);
             this.Controls.Add(equipoIdLabel);
-            this.Controls.Add(this.equipoIdTextBox);
+            this.Controls.Add(this.equipoIdComboBox);
             this.Controls.Add(banqueraIdLabel);
-            this.Controls.Add(this.banqueraIdTextBox);
+            this.Controls.Add(this.banqueraIdComboBox);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.UpdateButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(272, 262);
+            this.MinimumSize = new System.Drawing.Size(606, 301);
             this.Name = "RegistroBancasForm";
             this.Text = "Bancas";
             this.Load += new System.EventHandler(this.RegistroBancasForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox banqueraIdTextBox;
-        private System.Windows.Forms.TextBox equipoIdTextBox;
-        private System.Windows.Forms.TextBox rutaIdTextBox;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.ComboBox banqueraIdComboBox;
+        private System.Windows.Forms.ComboBox equipoIdComboBox;
+        private System.Windows.Forms.ComboBox rutaIdComboBox;
+        private System.Windows.Forms.TextBox bancaIdTextBox;
+        private System.Windows.Forms.Button Addbutton;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider BuscarerrorProvider;
     }
 }

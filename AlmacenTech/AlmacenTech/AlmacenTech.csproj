@@ -97,6 +97,12 @@
     <Compile Include="Consultas\ConsultaMensajerosForm.Designer.cs">
       <DependentUpon>ConsultaMensajerosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultasBancasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultasBancasForm.Designer.cs">
+      <DependentUpon>ConsultasBancasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaMensajerosForm.resx">
       <DependentUpon>ConsultaMensajerosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultasBancasForm.resx">
+      <DependentUpon>ConsultasBancasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>

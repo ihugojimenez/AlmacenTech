@@ -20,7 +20,7 @@ namespace DALL
         public virtual DbSet<TiposEquipos> TiposEquipos { get; set; }
         public virtual DbSet<Mensajeros> Mensajeros { get; set; }
         public virtual DbSet<Banqueras> Banqueras { get; set; }
-
+        public virtual DbSet<Bancas> Bancas { get; set; }
 
     }
 }
