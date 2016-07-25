@@ -21,6 +21,7 @@ namespace DALL
         public virtual DbSet<Mensajeros> Mensajeros { get; set; }
         public virtual DbSet<Banqueras> Banqueras { get; set; }
         public virtual DbSet<Bancas> Bancas { get; set; }
+        public virtual DbSet<Rutas> Rutas { get; set; }
 
     }
 }
