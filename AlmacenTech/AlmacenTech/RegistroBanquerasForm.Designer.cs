@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nombresLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label fechaLabel;
@@ -50,6 +51,7 @@
             this.UpdateButton = new System.Windows.Forms.Button();
             this.banqueraIdTextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             nombresLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
@@ -59,6 +61,7 @@
             telefonoLabel = new System.Windows.Forms.Label();
             banqueraIdLabel = new System.Windows.Forms.Label();
             this.ButtonsgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // nombresLabel
@@ -66,7 +69,7 @@
             nombresLabel.AutoSize = true;
             nombresLabel.Location = new System.Drawing.Point(12, 64);
             nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(67, 16);
+            nombresLabel.Size = new System.Drawing.Size(69, 17);
             nombresLabel.TabIndex = 1;
             nombresLabel.Text = "Nombres:";
             // 
@@ -75,7 +78,7 @@
             direccionLabel.AutoSize = true;
             direccionLabel.Location = new System.Drawing.Point(12, 200);
             direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(68, 16);
+            direccionLabel.Size = new System.Drawing.Size(71, 17);
             direccionLabel.TabIndex = 3;
             direccionLabel.Text = "Direccion:";
             // 
@@ -84,7 +87,7 @@
             fechaLabel.AutoSize = true;
             fechaLabel.Location = new System.Drawing.Point(354, 25);
             fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(49, 16);
+            fechaLabel.Size = new System.Drawing.Size(51, 17);
             fechaLabel.TabIndex = 13;
             fechaLabel.Text = "Fecha:";
             // 
@@ -93,7 +96,7 @@
             sexoLabel.AutoSize = true;
             sexoLabel.Location = new System.Drawing.Point(12, 227);
             sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(42, 16);
+            sexoLabel.Size = new System.Drawing.Size(43, 17);
             sexoLabel.TabIndex = 15;
             sexoLabel.Text = "Sexo:";
             // 
@@ -102,7 +105,7 @@
             cedulaLabel.AutoSize = true;
             cedulaLabel.Location = new System.Drawing.Point(12, 100);
             cedulaLabel.Name = "cedulaLabel";
-            cedulaLabel.Size = new System.Drawing.Size(54, 16);
+            cedulaLabel.Size = new System.Drawing.Size(56, 17);
             cedulaLabel.TabIndex = 17;
             cedulaLabel.Text = "Cedula:";
             // 
@@ -111,7 +114,7 @@
             celularLabel.AutoSize = true;
             celularLabel.Location = new System.Drawing.Point(12, 131);
             celularLabel.Name = "celularLabel";
-            celularLabel.Size = new System.Drawing.Size(53, 16);
+            celularLabel.Size = new System.Drawing.Size(56, 17);
             celularLabel.TabIndex = 19;
             celularLabel.Text = "Celular:";
             // 
@@ -120,7 +123,7 @@
             telefonoLabel.AutoSize = true;
             telefonoLabel.Location = new System.Drawing.Point(12, 164);
             telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(65, 16);
+            telefonoLabel.Size = new System.Drawing.Size(68, 17);
             telefonoLabel.TabIndex = 20;
             telefonoLabel.Text = "Telefono:";
             // 
@@ -129,7 +132,7 @@
             banqueraIdLabel.AutoSize = true;
             banqueraIdLabel.Location = new System.Drawing.Point(12, 25);
             banqueraIdLabel.Name = "banqueraIdLabel";
-            banqueraIdLabel.Size = new System.Drawing.Size(84, 16);
+            banqueraIdLabel.Size = new System.Drawing.Size(89, 17);
             banqueraIdLabel.TabIndex = 23;
             banqueraIdLabel.Text = "Banquera Id:";
             // 
@@ -213,6 +216,7 @@
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // SaveButton
             // 
@@ -225,6 +229,7 @@
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // UpdateButton
             // 
@@ -239,6 +244,7 @@
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // banqueraIdTextBox
             // 
@@ -258,6 +264,11 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // BuscarerrorProvider
+            // 
+            this.BuscarerrorProvider.ContainerControl = this;
             // 
             // RegistroBanquerasForm
             // 
@@ -287,6 +298,7 @@
             this.Text = "Banqueras";
             this.Load += new System.EventHandler(this.RegistroBanquerasForm_Load);
             this.ButtonsgroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +318,6 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.TextBox banqueraIdTextBox;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider BuscarerrorProvider;
     }
 }

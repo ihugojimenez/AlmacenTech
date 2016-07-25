@@ -40,6 +40,7 @@
             this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeMensajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaDeBanquerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,7 +116,8 @@
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultaDeUsuariosToolStripMenuItem,
             this.consultaDeMensajerosToolStripMenuItem,
-            this.consultaDeEquiposToolStripMenuItem});
+            this.consultaDeEquiposToolStripMenuItem,
+            this.consultaDeBanquerasToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -140,6 +142,13 @@
             this.consultaDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.consultaDeEquiposToolStripMenuItem.Text = "Consulta de Equipos";
             this.consultaDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.consultaDeEquiposToolStripMenuItem_Click);
+            // 
+            // consultaDeBanquerasToolStripMenuItem
+            // 
+            this.consultaDeBanquerasToolStripMenuItem.Name = "consultaDeBanquerasToolStripMenuItem";
+            this.consultaDeBanquerasToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.consultaDeBanquerasToolStripMenuItem.Text = "Consulta de Banqueras";
+            this.consultaDeBanquerasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeBanquerasToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -174,5 +183,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeMensajerosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeEquiposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaDeBanquerasToolStripMenuItem;
     }
 }

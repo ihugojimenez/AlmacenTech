@@ -79,6 +79,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlmacenTechDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaBanquerasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaBanquerasForm.Designer.cs">
+      <DependentUpon>ConsultaBanquerasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaEquiposForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     <Compile Include="RutasForm.Designer.cs">
       <DependentUpon>RutasForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\ConsultaBanquerasForm.resx">
+      <DependentUpon>ConsultaBanquerasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaEquiposForm.resx">
       <DependentUpon>ConsultaEquiposForm.cs</DependentUpon>
     </EmbeddedResource>

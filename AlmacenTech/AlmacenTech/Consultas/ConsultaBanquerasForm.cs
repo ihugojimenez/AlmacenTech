@@ -1,5 +1,4 @@
 ﻿using BLL;
-using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,23 +11,21 @@ using System.Windows.Forms;
 
 namespace AlmacenTech.Consultas
 {
-    public partial class ConsultaEquiposForm : Form
+    public partial class ConsultaBanquerasForm : Form
     {
-        Equipos equipo = new Equipos();
-        public ConsultaEquiposForm()
+        public ConsultaBanquerasForm()
         {
             InitializeComponent();
         }
 
-        private void ConsultaEquiposForm_Load(object sender, EventArgs e)
+        private void ConsultaBanquerasForm_Load(object sender, EventArgs e)
         {
-            EquiposdataGridView.DataSource = EquiposBLL.GetLista();
-            
+            BanquerasdataGridView.DataSource = BanquerasBLL.GetLista();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            EquiposdataGridView.DataSource = EquiposBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
+            BanquerasdataGridView.DataSource = BanquerasBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
         }
     }
 }

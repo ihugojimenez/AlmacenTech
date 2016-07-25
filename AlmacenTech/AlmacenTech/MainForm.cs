@@ -81,5 +81,11 @@ namespace AlmacenTech
             ConsultaEquiposForm CE = new ConsultaEquiposForm();
             CE.Show();
         }
+
+        private void consultaDeBanquerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaBanquerasForm cb = new Consultas.ConsultaBanquerasForm();
+            cb.Show();
+        }
     }
 }
