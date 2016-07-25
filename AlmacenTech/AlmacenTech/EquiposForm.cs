@@ -53,6 +53,7 @@ namespace AlmacenTech
                 BuscarerrorProvider.Clear();
                 EquiposBLL.EliminarEquipo(Convert.ToInt32(equipoIdTextBox.Text));
                 limpiar();
+                MessageBox.Show("ELiminado con exito");
             }
         }
 

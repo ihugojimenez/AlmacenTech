@@ -50,6 +50,7 @@ namespace AlmacenTech
                 BuscarerrorProvider.Clear();
                 UsuariosBLL.Eliminar(Convert.ToInt32(IDtextBox.Text));
                 limpiar();
+                MessageBox.Show("ELiminado con exito");
             }
 
         }

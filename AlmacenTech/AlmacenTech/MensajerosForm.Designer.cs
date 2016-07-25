@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mensajeroIdLabel;
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label cedulaLabel;
@@ -50,6 +51,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             mensajeroIdLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             cedulaLabel = new System.Windows.Forms.Label();
@@ -59,6 +61,7 @@
             sexoLabel = new System.Windows.Forms.Label();
             fechaNacimientoLabel = new System.Windows.Forms.Label();
             this.ButtonsgroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // mensajeroIdLabel
@@ -66,9 +69,72 @@
             mensajeroIdLabel.AutoSize = true;
             mensajeroIdLabel.Location = new System.Drawing.Point(12, 21);
             mensajeroIdLabel.Name = "mensajeroIdLabel";
-            mensajeroIdLabel.Size = new System.Drawing.Size(89, 16);
+            mensajeroIdLabel.Size = new System.Drawing.Size(93, 17);
             mensajeroIdLabel.TabIndex = 1;
             mensajeroIdLabel.Text = "Mensajero Id:";
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Location = new System.Drawing.Point(12, 55);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(62, 17);
+            nombreLabel.TabIndex = 3;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // cedulaLabel
+            // 
+            cedulaLabel.AutoSize = true;
+            cedulaLabel.Location = new System.Drawing.Point(12, 132);
+            cedulaLabel.Name = "cedulaLabel";
+            cedulaLabel.Size = new System.Drawing.Size(56, 17);
+            cedulaLabel.TabIndex = 5;
+            cedulaLabel.Text = "Cedula:";
+            // 
+            // celularLabel
+            // 
+            celularLabel.AutoSize = true;
+            celularLabel.Location = new System.Drawing.Point(12, 169);
+            celularLabel.Name = "celularLabel";
+            celularLabel.Size = new System.Drawing.Size(56, 17);
+            celularLabel.TabIndex = 7;
+            celularLabel.Text = "Celular:";
+            // 
+            // telefonoLabel
+            // 
+            telefonoLabel.AutoSize = true;
+            telefonoLabel.Location = new System.Drawing.Point(12, 203);
+            telefonoLabel.Name = "telefonoLabel";
+            telefonoLabel.Size = new System.Drawing.Size(68, 17);
+            telefonoLabel.TabIndex = 9;
+            telefonoLabel.Text = "Telefono:";
+            // 
+            // direccionLabel
+            // 
+            direccionLabel.AutoSize = true;
+            direccionLabel.Location = new System.Drawing.Point(12, 92);
+            direccionLabel.Name = "direccionLabel";
+            direccionLabel.Size = new System.Drawing.Size(71, 17);
+            direccionLabel.TabIndex = 11;
+            direccionLabel.Text = "Direccion:";
+            // 
+            // sexoLabel
+            // 
+            sexoLabel.AutoSize = true;
+            sexoLabel.Location = new System.Drawing.Point(12, 245);
+            sexoLabel.Name = "sexoLabel";
+            sexoLabel.Size = new System.Drawing.Size(43, 17);
+            sexoLabel.TabIndex = 13;
+            sexoLabel.Text = "Sexo:";
+            // 
+            // fechaNacimientoLabel
+            // 
+            fechaNacimientoLabel.AutoSize = true;
+            fechaNacimientoLabel.Location = new System.Drawing.Point(12, 282);
+            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
+            fechaNacimientoLabel.Size = new System.Drawing.Size(125, 17);
+            fechaNacimientoLabel.TabIndex = 15;
+            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
             // 
             // mensajeroIdTextBox
             // 
@@ -77,30 +143,12 @@
             this.mensajeroIdTextBox.Size = new System.Drawing.Size(28, 22);
             this.mensajeroIdTextBox.TabIndex = 2;
             // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(12, 55);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(60, 16);
-            nombreLabel.TabIndex = 3;
-            nombreLabel.Text = "Nombre:";
-            // 
             // nombreTextBox
             // 
             this.nombreTextBox.Location = new System.Drawing.Point(78, 52);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(301, 22);
             this.nombreTextBox.TabIndex = 4;
-            // 
-            // cedulaLabel
-            // 
-            cedulaLabel.AutoSize = true;
-            cedulaLabel.Location = new System.Drawing.Point(12, 132);
-            cedulaLabel.Name = "cedulaLabel";
-            cedulaLabel.Size = new System.Drawing.Size(54, 16);
-            cedulaLabel.TabIndex = 5;
-            cedulaLabel.Text = "Cedula:";
             // 
             // cedulaMaskedTextBox
             // 
@@ -110,15 +158,6 @@
             this.cedulaMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.cedulaMaskedTextBox.TabIndex = 6;
             // 
-            // celularLabel
-            // 
-            celularLabel.AutoSize = true;
-            celularLabel.Location = new System.Drawing.Point(12, 169);
-            celularLabel.Name = "celularLabel";
-            celularLabel.Size = new System.Drawing.Size(53, 16);
-            celularLabel.TabIndex = 7;
-            celularLabel.Text = "Celular:";
-            // 
             // celularMaskedTextBox
             // 
             this.celularMaskedTextBox.Location = new System.Drawing.Point(71, 166);
@@ -126,15 +165,6 @@
             this.celularMaskedTextBox.Name = "celularMaskedTextBox";
             this.celularMaskedTextBox.Size = new System.Drawing.Size(100, 22);
             this.celularMaskedTextBox.TabIndex = 8;
-            // 
-            // telefonoLabel
-            // 
-            telefonoLabel.AutoSize = true;
-            telefonoLabel.Location = new System.Drawing.Point(12, 203);
-            telefonoLabel.Name = "telefonoLabel";
-            telefonoLabel.Size = new System.Drawing.Size(65, 16);
-            telefonoLabel.TabIndex = 9;
-            telefonoLabel.Text = "Telefono:";
             // 
             // telefonoMaskedTextBox
             // 
@@ -144,30 +174,12 @@
             this.telefonoMaskedTextBox.Size = new System.Drawing.Size(89, 22);
             this.telefonoMaskedTextBox.TabIndex = 10;
             // 
-            // direccionLabel
-            // 
-            direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(12, 92);
-            direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(68, 16);
-            direccionLabel.TabIndex = 11;
-            direccionLabel.Text = "Direccion:";
-            // 
             // direccionTextBox
             // 
             this.direccionTextBox.Location = new System.Drawing.Point(86, 89);
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(293, 22);
             this.direccionTextBox.TabIndex = 12;
-            // 
-            // sexoLabel
-            // 
-            sexoLabel.AutoSize = true;
-            sexoLabel.Location = new System.Drawing.Point(12, 245);
-            sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(42, 16);
-            sexoLabel.TabIndex = 13;
-            sexoLabel.Text = "Sexo:";
             // 
             // sexoCheckBox
             // 
@@ -177,15 +189,6 @@
             this.sexoCheckBox.TabIndex = 14;
             this.sexoCheckBox.Text = "checkBox1";
             this.sexoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // fechaNacimientoLabel
-            // 
-            fechaNacimientoLabel.AutoSize = true;
-            fechaNacimientoLabel.Location = new System.Drawing.Point(12, 282);
-            fechaNacimientoLabel.Name = "fechaNacimientoLabel";
-            fechaNacimientoLabel.Size = new System.Drawing.Size(120, 16);
-            fechaNacimientoLabel.TabIndex = 15;
-            fechaNacimientoLabel.Text = "Fecha Nacimiento:";
             // 
             // fechaNacimientoDateTimePicker
             // 
@@ -219,6 +222,7 @@
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;
+            this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // SaveButton
             // 
@@ -231,6 +235,7 @@
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // UpdateButton
             // 
@@ -245,12 +250,13 @@
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // Buscarbutton
             // 
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(141, 3);
+            this.Buscarbutton.Location = new System.Drawing.Point(164, 3);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 43);
             this.Buscarbutton.TabIndex = 26;
@@ -258,6 +264,10 @@
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // BuscarerrorProvider
+            // 
+            this.BuscarerrorProvider.ContainerControl = this;
             // 
             // MensajerosForm
             // 
@@ -286,6 +296,7 @@
             this.Text = "Mensajeros";
             this.Load += new System.EventHandler(this.MensajerosForm_Load);
             this.ButtonsgroupBox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,5 +316,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.ErrorProvider BuscarerrorProvider;
     }
 }
