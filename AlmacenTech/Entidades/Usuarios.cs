@@ -23,6 +23,6 @@ namespace Entidades
 
         }
 
-        public virtual DbSet<PermisoUsuarios> PermisosUsuarios { get; set; }
+        public virtual PermisoUsuarios PermisosUsuarios { get; set; }
     }
 }

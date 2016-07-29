@@ -27,7 +27,8 @@ namespace AlmacenTech
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
 
         private void registrarBanqueraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,6 +92,11 @@ namespace AlmacenTech
             Consultas.ConsultaBanquerasForm cb = new Consultas.ConsultaBanquerasForm();
             cb.MdiParent = this;
             cb.Show();
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,68 +55,77 @@
             // marcaEquipoLabel
             // 
             marcaEquipoLabel.AutoSize = true;
-            marcaEquipoLabel.Location = new System.Drawing.Point(3, 54);
+            marcaEquipoLabel.Location = new System.Drawing.Point(2, 44);
+            marcaEquipoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             marcaEquipoLabel.Name = "marcaEquipoLabel";
-            marcaEquipoLabel.Size = new System.Drawing.Size(99, 17);
+            marcaEquipoLabel.Size = new System.Drawing.Size(76, 13);
             marcaEquipoLabel.TabIndex = 3;
             marcaEquipoLabel.Text = "Marca Equipo:";
             // 
             // serialNumLabel
             // 
             serialNumLabel.AutoSize = true;
-            serialNumLabel.Location = new System.Drawing.Point(1, 99);
+            serialNumLabel.Location = new System.Drawing.Point(1, 80);
+            serialNumLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             serialNumLabel.Name = "serialNumLabel";
-            serialNumLabel.Size = new System.Drawing.Size(81, 17);
+            serialNumLabel.Size = new System.Drawing.Size(61, 13);
             serialNumLabel.TabIndex = 5;
             serialNumLabel.Text = "Serial Num:";
             // 
             // equipoIdLabel
             // 
             equipoIdLabel.AutoSize = true;
-            equipoIdLabel.Location = new System.Drawing.Point(11, 9);
+            equipoIdLabel.Location = new System.Drawing.Point(8, 7);
+            equipoIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             equipoIdLabel.Name = "equipoIdLabel";
-            equipoIdLabel.Size = new System.Drawing.Size(71, 17);
+            equipoIdLabel.Size = new System.Drawing.Size(55, 13);
             equipoIdLabel.TabIndex = 7;
             equipoIdLabel.Text = "Equipo Id:";
             // 
             // tipoEquipoLabel
             // 
             tipoEquipoLabel.AutoSize = true;
-            tipoEquipoLabel.Location = new System.Drawing.Point(12, 137);
+            tipoEquipoLabel.Location = new System.Drawing.Point(9, 111);
+            tipoEquipoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             tipoEquipoLabel.Name = "tipoEquipoLabel";
-            tipoEquipoLabel.Size = new System.Drawing.Size(88, 17);
+            tipoEquipoLabel.Size = new System.Drawing.Size(67, 13);
             tipoEquipoLabel.TabIndex = 9;
             tipoEquipoLabel.Text = "Tipo Equipo:";
             // 
             // marcaEquipoTextBox
             // 
-            this.marcaEquipoTextBox.Location = new System.Drawing.Point(108, 54);
+            this.marcaEquipoTextBox.Location = new System.Drawing.Point(81, 44);
+            this.marcaEquipoTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.marcaEquipoTextBox.Name = "marcaEquipoTextBox";
-            this.marcaEquipoTextBox.Size = new System.Drawing.Size(210, 22);
+            this.marcaEquipoTextBox.Size = new System.Drawing.Size(158, 20);
             this.marcaEquipoTextBox.TabIndex = 4;
             // 
             // serialNumTextBox
             // 
-            this.serialNumTextBox.Location = new System.Drawing.Point(88, 96);
+            this.serialNumTextBox.Location = new System.Drawing.Point(66, 78);
+            this.serialNumTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.serialNumTextBox.Name = "serialNumTextBox";
-            this.serialNumTextBox.Size = new System.Drawing.Size(228, 22);
+            this.serialNumTextBox.Size = new System.Drawing.Size(172, 20);
             this.serialNumTextBox.TabIndex = 6;
             // 
             // equipoIdTextBox
             // 
-            this.equipoIdTextBox.Location = new System.Drawing.Point(85, 6);
+            this.equipoIdTextBox.Location = new System.Drawing.Point(64, 5);
+            this.equipoIdTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.equipoIdTextBox.Name = "equipoIdTextBox";
-            this.equipoIdTextBox.Size = new System.Drawing.Size(22, 22);
+            this.equipoIdTextBox.Size = new System.Drawing.Size(18, 20);
             this.equipoIdTextBox.TabIndex = 8;
             // 
             // tipoEquipoComboBox
             // 
             this.tipoEquipoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipoEquipoComboBox.FormattingEnabled = true;
-            this.tipoEquipoComboBox.Location = new System.Drawing.Point(103, 136);
+            this.tipoEquipoComboBox.Location = new System.Drawing.Point(77, 110);
+            this.tipoEquipoComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tipoEquipoComboBox.Name = "tipoEquipoComboBox";
-            this.tipoEquipoComboBox.Size = new System.Drawing.Size(220, 24);
+            this.tipoEquipoComboBox.Size = new System.Drawing.Size(166, 21);
             this.tipoEquipoComboBox.TabIndex = 10;
+            this.tipoEquipoComboBox.SelectedIndexChanged += new System.EventHandler(this.tipoEquipoComboBox_SelectedIndexChanged);
             // 
             // UpdateButton
             // 
@@ -124,9 +133,10 @@
             this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateButton.Image")));
             this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.UpdateButton.Location = new System.Drawing.Point(128, 15);
+            this.UpdateButton.Location = new System.Drawing.Point(96, 12);
+            this.UpdateButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(77, 49);
+            this.UpdateButton.Size = new System.Drawing.Size(58, 40);
             this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Guardar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -139,9 +149,10 @@
             this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.searchButton.Location = new System.Drawing.Point(143, 6);
+            this.searchButton.Location = new System.Drawing.Point(107, 5);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(81, 36);
+            this.searchButton.Size = new System.Drawing.Size(61, 29);
             this.searchButton.TabIndex = 12;
             this.searchButton.Text = "Buscar";
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -154,9 +165,10 @@
             this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Deletebutton.Location = new System.Drawing.Point(12, 16);
+            this.Deletebutton.Location = new System.Drawing.Point(9, 13);
+            this.Deletebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Deletebutton.Name = "Deletebutton";
-            this.Deletebutton.Size = new System.Drawing.Size(80, 48);
+            this.Deletebutton.Size = new System.Drawing.Size(60, 39);
             this.Deletebutton.TabIndex = 13;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -167,9 +179,10 @@
             // 
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
-            this.SaveButton.Location = new System.Drawing.Point(234, 15);
+            this.SaveButton.Location = new System.Drawing.Point(176, 12);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(74, 49);
+            this.SaveButton.Size = new System.Drawing.Size(56, 40);
             this.SaveButton.TabIndex = 14;
             this.SaveButton.Text = "Agregar";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -181,9 +194,11 @@
             this.ButtonsgroupBox.Controls.Add(this.Deletebutton);
             this.ButtonsgroupBox.Controls.Add(this.SaveButton);
             this.ButtonsgroupBox.Controls.Add(this.UpdateButton);
-            this.ButtonsgroupBox.Location = new System.Drawing.Point(15, 181);
+            this.ButtonsgroupBox.Location = new System.Drawing.Point(11, 147);
+            this.ButtonsgroupBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ButtonsgroupBox.Name = "ButtonsgroupBox";
-            this.ButtonsgroupBox.Size = new System.Drawing.Size(330, 74);
+            this.ButtonsgroupBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonsgroupBox.Size = new System.Drawing.Size(248, 60);
             this.ButtonsgroupBox.TabIndex = 15;
             this.ButtonsgroupBox.TabStop = false;
             this.ButtonsgroupBox.Text = "Opciones";
@@ -194,11 +209,11 @@
             // 
             // EquiposForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(357, 275);
+            this.ClientSize = new System.Drawing.Size(268, 223);
             this.Controls.Add(this.ButtonsgroupBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(tipoEquipoLabel);
@@ -209,8 +224,9 @@
             this.Controls.Add(this.serialNumTextBox);
             this.Controls.Add(marcaEquipoLabel);
             this.Controls.Add(this.marcaEquipoTextBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(373, 314);
+            this.MinimumSize = new System.Drawing.Size(284, 262);
             this.Name = "EquiposForm";
             this.Text = "Registro de Equipos";
             this.Load += new System.EventHandler(this.EquiposForm_Load);

@@ -11,7 +11,7 @@ namespace BLL
     public static class UsuariosBLL
     {
 
-        public static void AgregarUsuario(Usuarios u)
+        public static void Insertar(Usuarios u)
         {
             try
             {
@@ -41,25 +41,25 @@ namespace BLL
         public static void Eliminar(int id)
         {
             var db = new AlmacenBancasDB();
-
-            Usuarios u = (from p in db.usuario
-                          where id == p.UsuarioId
-                          select p).FirstOrDefault();
+            Usuarios u = db.usuario.Find(id);
+            
             db.usuario.Remove(u);
             db.SaveChanges();
         }
 
-        public static void Actualizar(int id,string nombre, string apellido, string usuario, string contraseña)
+        public static void Actualizar(int id, Usuarios usuario)
         {
             var db = new AlmacenBancasDB();
 
             Usuarios u = (from p in db.usuario
                           where id == p.UsuarioId
                           select p).FirstOrDefault();
-            u.Apellido = apellido;
-            u.Contraseña = contraseña;
-            u.Nombre = nombre;
-            u.NombreUsuario = usuario;
+
+            u.Apellido = usuario.Apellido;
+            u.Contraseña = usuario.Contraseña;
+            u.IdPermiso = usuario.IdPermiso;
+            u.Nombre = usuario.Nombre;
+            u.NombreUsuario = usuario.NombreUsuario;
             db.SaveChanges();
         }
 
@@ -86,5 +86,43 @@ namespace BLL
             return lista;
 
         }
+
+        public static List<Usuarios> GetApellido(string n)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.Where(p => p.Apellido == n).ToList();
+
+            return lista;
+
+        }
+
+        public static List<Usuarios> GetListaIdPermiso(int id)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.Where(p => p.IdPermiso == id).ToList();
+
+            return lista;
+
+        }
+
+
+
+        public static int Cantidad()
+        {
+//            int total = 0;
+
+            var db = new AlmacenBancasDB();
+            
+
+            return db.usuario.Count();
+        }
+
+
     }
 }

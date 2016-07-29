@@ -115,10 +115,9 @@ namespace AlmacenTech
             tipoEquipoComboBox.SelectedValue = equipo.TipoId;
         }
 
-       
+        private void tipoEquipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-       
-
-        
+        }
     }
 }

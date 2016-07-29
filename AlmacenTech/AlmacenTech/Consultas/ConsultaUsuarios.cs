@@ -20,12 +20,56 @@ namespace AlmacenTech.Consultas
 
         private void ConsultaUsuarios_Load(object sender, EventArgs e)
         {
-            UsuariosdataGridView.DataSource = UsuariosBLL.GetLista();
+            Cargar();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            UsuariosdataGridView.DataSource = UsuariosBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
+
+            if(validar())
+                BuscarSeleccion();
+        }
+
+        private void BuscarSeleccion()
+        {
+            if (FiltrocomboBox.SelectedIndex == 0)
+                UsuariosdataGridView.DataSource= UsuariosBLL.GetListaId(StringToInt(FiltrotextBox.Text));
+            if (FiltrocomboBox.SelectedIndex == 1)
+                UsuariosdataGridView.DataSource = UsuariosBLL.GetApellido(FiltrotextBox.Text);
+            if (FiltrocomboBox.SelectedIndex == 2)
+                UsuariosdataGridView.DataSource = UsuariosBLL.GetListaIdPermiso(StringToInt(FiltrotextBox.Text));
+
+        }
+
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            {
+                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                return false;
+            }
+            
+
+            return true;
+        }
+
+        public int StringToInt(string texto)
+        {
+            int numero = 0;
+
+            int.TryParse(texto, out numero);
+
+            return numero;
+        }
+
+        private void Cargar()
+        {
+            FiltrocomboBox.Items.Insert(0, "ID");
+            FiltrocomboBox.Items.Insert(1, "Apellido");
+            FiltrocomboBox.Items.Insert(2, "ID Permiso de Usuario");
+            FiltrocomboBox.DataSource = FiltrocomboBox.Items;
+            FiltrocomboBox.DisplayMember = "ID";
+            UsuariosdataGridView.DataSource = UsuariosBLL.GetLista();
         }
     }
 }
