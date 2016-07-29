@@ -25,6 +25,7 @@ namespace BLL
             catch (Exception exx)
             {
                 throw exx;
+
             }
 
 
@@ -41,10 +42,11 @@ namespace BLL
         public static void EliminarMensajero(int id)
         {
             var db = new AlmacenBancasDB();
+            Mensajeros m = db.Mensajeros.Find(id);
 
-            Mensajeros m = (from p in db.Mensajeros
+            /*Mensajeros m = (from p in db.Mensajeros
                          where id == p.MensajeroId
-                         select p).FirstOrDefault();
+                         select p).FirstOrDefault();*/
             db.Mensajeros.Remove(m);
             db.SaveChanges();
         }

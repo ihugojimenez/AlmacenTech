@@ -110,7 +110,7 @@ namespace AlmacenTech
             m.Sexo = true;
             m.FechaNacimiento = fechaNacimientoDateTimePicker.Value;
 
-            if (nombreTextBox.Text == "" || direccionTextBox.Text == " " || cedulaMaskedTextBox.Text == " " || celularMaskedTextBox.Text == " " || telefonoMaskedTextBox.Text == " ")
+            if (string.IsNullOrWhiteSpace( nombreTextBox.Text)|| direccionTextBox.Text == " " || cedulaMaskedTextBox.Text == " " || celularMaskedTextBox.Text == " " || telefonoMaskedTextBox.Text == " ")
             {
                 MessageBox.Show("Favor llenar todos los campos");
             }

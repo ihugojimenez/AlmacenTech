@@ -22,7 +22,9 @@ namespace AlmacenTech
 
         private void RegisterUsersForm_Load(object sender, EventArgs e)
         {
-
+            PermisocomboBox.DataSource = PermisoUsuariosBLL.GetLista();
+            PermisocomboBox.ValueMember = "IdPermiso";
+            PermisocomboBox.DisplayMember = "Detalle";
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -95,30 +97,7 @@ namespace AlmacenTech
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
-            Usuarios us = new Usuarios();
-            string aux = ConfPassTextBox.Text;
-            us.Apellido = ApellidoTextBox.Text;
-            us.Nombre = NameTextBox.Text;
-            us.NombreUsuario = UserNameTextBox.Text;
-            us.Contraseña = PassTextBox.Text;
-
-            if(aux != PassTextBox.Text)
-            {
-                PasworderrorProvider.SetError(ConfPassTextBox, "Las contraseñas no coinciden");
-            }
-            else
-            {
-                PasworderrorProvider.Clear();
-                if(PassTextBox.Text == "" || NameTextBox.Text == " " || ApellidoTextBox.Text == " " || UserNameTextBox.Text == " " ||ConfPassTextBox.Text == "" )
-                {
-                    MessageBox.Show("Favor llenar todos los campos");
-                }
-                else
-                {
-                    UsuariosBLL.AgregarUsuario(us);
-                    limpiar();
-                }
-            }
+            
             
     
         }
@@ -145,6 +124,9 @@ namespace AlmacenTech
             
         }
 
-
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
     }
 }

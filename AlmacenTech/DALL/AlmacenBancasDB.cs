@@ -22,6 +22,7 @@ namespace DALL
         public virtual DbSet<Banqueras> Banqueras { get; set; }
         public virtual DbSet<Bancas> Bancas { get; set; }
         public virtual DbSet<Rutas> Rutas { get; set; }
+        public virtual DbSet<PermisoUsuarios> PermisoUsuarios { get; set; }
 
     }
 }

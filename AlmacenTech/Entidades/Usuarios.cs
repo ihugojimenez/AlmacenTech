@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,13 @@ namespace Entidades
         public string Contraseña { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public int IdPermiso { get; set; }
 
         public Usuarios()
         {
 
         }
+
+        public virtual DbSet<PermisoUsuarios> PermisosUsuarios { get; set; }
     }
 }

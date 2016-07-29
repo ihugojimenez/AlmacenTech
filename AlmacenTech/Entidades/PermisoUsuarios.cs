@@ -7,21 +7,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class TiposEquipos
+    public class PermisoUsuarios
     {
-        public TiposEquipos()
-        {
-
-        }
-
         [Key]
-        public int TipoId { get; set; }
+        public int IdPermiso { get; set; }
         public string Detalle { get; set; }
 
-        public override string ToString()
+        public PermisoUsuarios()
         {
-            return this.Detalle;
+
         }
-        
+
+
     }
 }

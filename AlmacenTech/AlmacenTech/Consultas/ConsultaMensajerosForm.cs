@@ -27,5 +27,7 @@ namespace AlmacenTech.Consultas
         {
             MensajerosdataGridView.DataSource = MensajerosBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
         }
+
+        
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Entradas.cs" />
     <Compile Include="Equipos.cs" />
     <Compile Include="Mensajeros.cs" />
+    <Compile Include="PermisoUsuarios.cs" />
     <Compile Include="Prestamos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rutas.cs" />

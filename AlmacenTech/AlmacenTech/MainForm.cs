@@ -61,30 +61,35 @@ namespace AlmacenTech
         private void registroDeTiposDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rTiposEquipos rte = new rTiposEquipos();
+            rte.MdiParent = this;
             rte.Show();
         }
 
         private void consultaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaUsuarios cu = new ConsultaUsuarios();
+            cu.MdiParent = this;
             cu.Show();
         }
 
         private void consultaDeMensajerosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaMensajerosForm cm = new ConsultaMensajerosForm();
+            cm.MdiParent = this;
             cm.Show();
         }
 
         private void consultaDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaEquiposForm CE = new ConsultaEquiposForm();
+            CE.MdiParent = this;
             CE.Show();
         }
 
         private void consultaDeBanquerasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Consultas.ConsultaBanquerasForm cb = new Consultas.ConsultaBanquerasForm();
+            cb.MdiParent = this;
             cb.Show();
         }
     }
