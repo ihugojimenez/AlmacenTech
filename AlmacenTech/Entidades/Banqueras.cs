@@ -17,12 +17,15 @@ namespace Entidades
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha { get; set; }
-        public bool Sexo { get; set; }
-
+        public char Sexo { get; set; }
+        public string Apellidos { get; set; }
+       
         public Banqueras()
         {
 
         }
+
+        
 
 
     }

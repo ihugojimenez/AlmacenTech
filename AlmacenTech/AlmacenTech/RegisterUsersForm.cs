@@ -74,7 +74,7 @@ namespace AlmacenTech
 
             if (validarId("Favor digitar el id del usuario que desea eliminar"))
             {
-                UsuariosBLL.Eliminar(Convert.ToInt32(IDtextBox.Text));
+                UsuariosBLL.Eliminar(StringToInt(IDtextBox.Text));
                 limpiarErrores();
                 limpiar();
                 MessageBox.Show("ELiminado con exito");

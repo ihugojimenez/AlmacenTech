@@ -20,12 +20,56 @@ namespace AlmacenTech.Consultas
 
         private void ConsultaBanquerasForm_Load(object sender, EventArgs e)
         {
-            BanquerasdataGridView.DataSource = BanquerasBLL.GetLista();
+            Cargar();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            BanquerasdataGridView.DataSource = BanquerasBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
+            if (validar())
+                BuscarSeleccion();
         }
+
+        private void Cargar()
+        {
+            FiltrocomboBox.Items.Insert(0, "ID");
+            FiltrocomboBox.Items.Insert(1, "Apellido");
+            FiltrocomboBox.Items.Insert(2, "Fecha");
+            FiltrocomboBox.DataSource = FiltrocomboBox.Items;
+            FiltrocomboBox.DisplayMember = "ID";
+            BanquerasdataGridView.DataSource = BanquerasBLL.GetLista();
+        }
+
+        private void BuscarSeleccion()
+        {
+            if (FiltrocomboBox.SelectedIndex == 0)
+                BanquerasdataGridView.DataSource = BanquerasBLL.GetListaId(StringToInt(FiltrotextBox.Text));
+            if (FiltrocomboBox.SelectedIndex == 1)
+                BanquerasdataGridView.DataSource = BanquerasBLL.GetListaApellido(FiltrotextBox.Text);
+           /* if (FiltrocomboBox.SelectedIndex == 2)
+                BanquerasdataGridView.DataSource = EquiposBLL.GetListaTipo(StringToInt(FiltrotextBox.Text));*/
+
+        }
+
+        private int StringToInt(string texto)
+        {
+            int numero = 0;
+
+            int.TryParse(texto, out numero);
+
+            return numero;
+        }
+
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            {
+                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                return false;
+            }
+            BuscarerrorProvider.Clear();
+
+            return true;
+        }
+
     }
 }

@@ -193,7 +193,7 @@
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(66, 59);
-            this.UpdateButton.TabIndex = 12;
+            this.UpdateButton.TabIndex = 11;
             this.UpdateButton.Text = "Actualizar";
             this.UpdateButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.UpdateButton.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(68, 58);
-            this.Deletebutton.TabIndex = 11;
+            this.Deletebutton.TabIndex = 12;
             this.Deletebutton.Text = "Eliminar";
             this.Deletebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Deletebutton.UseVisualStyleBackColor = true;

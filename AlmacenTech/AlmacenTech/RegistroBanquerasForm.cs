@@ -14,6 +14,8 @@ namespace AlmacenTech
 {
     public partial class RegistroBanquerasForm : Form
     {
+        Banqueras banquera = new Banqueras();
+        RegisterUsersForm RU = new RegisterUsersForm();
         public RegistroBanquerasForm()
         {
             InitializeComponent();
@@ -29,14 +31,49 @@ namespace AlmacenTech
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(banqueraIdTextBox.Text))
-            {
-                BuscarerrorProvider.SetError(banqueraIdTextBox, "Favor digitar el ID de la banquera que desea buscar");
-            }
-            else
-            {
-                LLenar(BanquerasBLL.Buscar(Convert.ToInt32(banqueraIdTextBox.Text)));
+            if (validarId("Favor ingresar el id del usuario que desea buscar"))
+                LLenar(BanquerasBLL.Buscar(RU.StringToInt(banqueraIdTextBox.Text)));
+        }
 
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+            BuscarerrorProvider.Clear();
+            LlenarClase(banquera);
+            if (ValidarTextbox())
+            {
+                BanquerasBLL.Insertar(banquera);
+                limpiar();
+                limpiarErrores();
+                MessageBox.Show("Guardado con exito");
+            }
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (validarId("Favor Buscar la banquera que desea actualizar") && ValidarTextbox())
+            {
+
+                LlenarClase(banquera);
+                BanquerasBLL.Actualizar(RU.StringToInt(banqueraIdTextBox.Text), banquera);
+                limpiar();
+                limpiarErrores();
+                MessageBox.Show("Actualizado con exito");
+            }
+        }
+
+        private void Deletebutton_Click_1(object sender, EventArgs e)
+        {
+            if (validarId("Favor digitar el id de la banquera que desea eliminar"))
+            {
+                BanquerasBLL.Eliminar(RU.StringToInt(banqueraIdTextBox.Text));
+                limpiarErrores();
+                limpiar();
+                MessageBox.Show("ELiminado con exito");
             }
         }
 
@@ -48,78 +85,143 @@ namespace AlmacenTech
             celularMaskedTextBox.Text = banquera.Celular;
             telefonoMaskedTextBox.Text = banquera.Telefono;
             direccionTextBox.Text = banquera.Direccion;
+            ApellidotextBox.Text = banquera.Apellidos;
 
-        }
+        }    
 
         private void limpiar()
         {
+            DateTimePicker dp = new DateTimePicker();
+            
             banqueraIdTextBox.Text ="";
             nombresTextBox.Text = "";
             cedulaMaskedTextBox.Text ="";
             celularMaskedTextBox.Text = "";
             telefonoMaskedTextBox.Text = "";
             direccionTextBox.Text = "";
+            ApellidotextBox.Text = "";
+            MasculinoradioButton.Checked = false;
+            FemeninoradioButton.Checked = false;
+            fechaDateTimePicker.Value = dp.Value;
         }
 
-        private void Deletebutton_Click(object sender, EventArgs e)
+        private void fechaDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(banqueraIdTextBox.Text))
+
+        }
+
+        private void LlenarClase(Banqueras b)
+        {
+            b.Nombres = nombresTextBox.Text;
+            b.Cedula = cedulaMaskedTextBox.Text;
+            b.Direccion = direccionTextBox.Text;
+            b.Telefono = telefonoMaskedTextBox.Text;
+            b.Celular = celularMaskedTextBox.Text;
+            b.Apellidos = ApellidotextBox.Text;
+            if (MasculinoradioButton.Checked == true)
             {
-                BuscarerrorProvider.SetError(banqueraIdTextBox, "Favor digitar el ID de la banquera que desea eliminar");
+                b.Sexo = 'M';
             }
             else
             {
-                BuscarerrorProvider.Clear();
-                BanquerasBLL.EliminarBanqueras(Convert.ToInt32(banqueraIdTextBox.Text));
-                limpiar();
-                MessageBox.Show("ELiminado con exito");
+                if (FemeninoradioButton.Checked == true)
+                    b.Sexo = 'F';
+                else
+                    b.Sexo = 'I';
             }
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            Banqueras b = new Banqueras();
-
-            b.Nombres = nombresTextBox.Text;
-            b.Direccion = direccionTextBox.Text;
-            b.Cedula = cedulaMaskedTextBox.Text;
-            b.Celular = celularMaskedTextBox.Text;
-            b.Telefono = telefonoMaskedTextBox.Text;
-            b.Sexo = true;
+                
+            
             b.Fecha = fechaDateTimePicker.Value;
 
-            if (nombresTextBox.Text == "" || direccionTextBox.Text == " " || cedulaMaskedTextBox.Text == " " || celularMaskedTextBox.Text == " " || telefonoMaskedTextBox.Text == " ")
+        }
+        //Tengo que arreglar la asignaciond de valor al sexo....
+        private bool ValidarTextbox()
+        {
+            //int n = UsuariosBLL.Cantidad();
+            if (string.IsNullOrEmpty(nombresTextBox.Text) && cedulaMaskedTextBox.MaskFull != true && celularMaskedTextBox.MaskFull != true && string.IsNullOrEmpty(ApellidotextBox.Text))
             {
-                MessageBox.Show("Favor llenar todos los campos");
+                NombreerrorProvider.SetError(nombresTextBox, "Favor ingresar el nombre de la banquera");
+                CedulaerrorProvider.SetError(cedulaMaskedTextBox, "Favor ingresar la cedula de la banquera");
+                CelularerrorProvider.SetError(celularMaskedTextBox, "Favor ingresar el numero de celular de la banquera");               
+                ApellidoerrorProvider.SetError(ApellidotextBox, "Favor ingresar el apellido de la banquera");
+                MessageBox.Show("Favor llenar todos los campos obligatorios");
+                
+
             }
-            else
+            if (string.IsNullOrEmpty(nombresTextBox.Text))
             {
-                BanquerasBLL.AgregarBanqueras(b);
-                limpiar();
+                NombreerrorProvider.SetError(nombresTextBox, "Favor ingresar el nombre de la banquera");
+                return false;
             }
+
+            if (celularMaskedTextBox.MaskFull == false)
+            {
+                NombreerrorProvider.Clear();
+                CelularerrorProvider.SetError(celularMaskedTextBox, "Favor ingresar el numero de celular de la banquera");
+                return false;
+            }
+
+            if (cedulaMaskedTextBox.MaskFull == false)
+            {
+                NombreerrorProvider.Clear();
+                CelularerrorProvider.Clear();
+                CedulaerrorProvider.SetError(cedulaMaskedTextBox, "Favor ingresar la cedula de la banquera");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(ApellidotextBox.Text))
+            {
+                NombreerrorProvider.Clear();
+                CelularerrorProvider.Clear();
+                CedulaerrorProvider.Clear();
+                ApellidoerrorProvider.SetError(ApellidotextBox, "Favor ingresar el apellido de la banquera");
+                return false;
+            }
+
+
+            /*for (int aux = 4; aux <= n; aux++)
+            {
+                if (UserNameTextBox.Text == UsuariosBLL.Buscar(aux).NombreUsuario)
+                {
+                    MessageBox.Show("EL Nombre de usuario que intenta ingresar ya existe");
+                    return false;
+                }
+            }*/
+
+            return true;
+
+
+
+
         }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
+        private bool validarId(string message)
         {
             if (string.IsNullOrEmpty(banqueraIdTextBox.Text))
             {
-                BuscarerrorProvider.SetError(banqueraIdTextBox, "Favor buscar el ID de la banquera que desea modificar");
+                BuscarerrorProvider.SetError(banqueraIdTextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
             }
             else
             {
-                BuscarerrorProvider.Clear();
-                if (nombresTextBox.Text == "" || direccionTextBox.Text == " " || cedulaMaskedTextBox.Text == " " || celularMaskedTextBox.Text == " " || telefonoMaskedTextBox.Text == " ")
-                {
-                    MessageBox.Show("Favor llenar todos los campos");
-                }
-                else
-                {
-                    bool sex = true;
-                    BanquerasBLL.ActualizarBanqueras(Convert.ToInt32(banqueraIdTextBox.Text), nombresTextBox.Text, direccionTextBox.Text, celularMaskedTextBox.Text, telefonoMaskedTextBox.Text, fechaDateTimePicker.Value, sex);
-                    limpiar();
-                }
 
+                return true;
             }
+        }
+
+        private void limpiarErrores()
+        {
+            NombreerrorProvider.Clear();
+            ApellidoerrorProvider.Clear();
+            CelularerrorProvider.Clear();
+            CedulaerrorProvider.Clear();
+        }
+
+        private void banqueraIdTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+            
         }
     }
 }

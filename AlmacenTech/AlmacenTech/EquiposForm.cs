@@ -15,6 +15,7 @@ namespace AlmacenTech
     public partial class EquiposForm : Form
     {
         Equipos equipo = new Equipos();
+        RegisterUsersForm RU = new RegisterUsersForm();
         public EquiposForm()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace AlmacenTech
         private void searchButton_Click(object sender, EventArgs e)
         {
             if (validarId("Favor ingresar el id del usuario que desea buscar"))
-                LLenar(EquiposBLL.Buscar(StringToInt(equipoIdTextBox.Text)));
+                LLenar(EquiposBLL.Buscar(RU.StringToInt(equipoIdTextBox.Text)));
      
         }
 
@@ -58,7 +59,7 @@ namespace AlmacenTech
             {
 
                 LlenarClase(equipo);
-                EquiposBLL.Actualizar(StringToInt(equipoIdTextBox.Text), equipo);
+                EquiposBLL.Actualizar(RU.StringToInt(equipoIdTextBox.Text), equipo);
                 limpiar();
                 MessageBox.Show("Actualizado con exito");
             }
@@ -68,7 +69,7 @@ namespace AlmacenTech
         {
             if (validarId("Favor digitar el id del equipo que desea eliminar"))
             {
-                EquiposBLL.Eliminar(Convert.ToInt32(equipoIdTextBox.Text));
+                EquiposBLL.Eliminar(RU.StringToInt(equipoIdTextBox.Text));
                 limpiarErrores();
                 limpiar();
                 MessageBox.Show("ELiminado con exito");
@@ -105,15 +106,6 @@ namespace AlmacenTech
 
                 return true;
             }
-        }
-
-        public int StringToInt(string texto)
-        {
-            int numero = 0;
-
-            int.TryParse(texto, out numero);
-
-            return numero;
         }
 
         private void tipoEquipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
