@@ -60,6 +60,7 @@
             this.ApellidotextBox = new System.Windows.Forms.TextBox();
             this.SexogroupBox = new System.Windows.Forms.GroupBox();
             this.ApellidoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SexoerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             nombresLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             cedulaLabel = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CelularerrorProvider)).BeginInit();
             this.SexogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SexoerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // nombresLabel
@@ -396,6 +398,10 @@
             // 
             this.ApellidoerrorProvider.ContainerControl = this;
             // 
+            // SexoerrorProvider
+            // 
+            this.SexoerrorProvider.ContainerControl = this;
+            // 
             // RegistroBanquerasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,6 +442,7 @@
             this.SexogroupBox.ResumeLayout(false);
             this.SexogroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ApellidoerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SexoerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,5 +471,6 @@
         private System.Windows.Forms.TextBox ApellidotextBox;
         private System.Windows.Forms.GroupBox SexogroupBox;
         private System.Windows.Forms.ErrorProvider ApellidoerrorProvider;
+        private System.Windows.Forms.ErrorProvider SexoerrorProvider;
     }
 }

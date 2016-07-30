@@ -31,7 +31,7 @@ namespace AlmacenTech
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if (validarId("Favor ingresar el id del usuario que desea buscar"))
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
                 LLenar(EquiposBLL.Buscar(RU.StringToInt(equipoIdTextBox.Text)));
      
         }
@@ -67,7 +67,7 @@ namespace AlmacenTech
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
-            if (validarId("Favor digitar el id del equipo que desea eliminar"))
+            if (validarId("Favor digitar el id del equipo que desea eliminar") && ValidarBuscar())
             {
                 EquiposBLL.Eliminar(RU.StringToInt(equipoIdTextBox.Text));
                 limpiarErrores();
@@ -81,6 +81,7 @@ namespace AlmacenTech
             marcaEquipoTextBox.Text = "";
             serialNumTextBox.Text = "";
             equipoIdTextBox.Text = "";
+            limpiarErrores();
             
 
         }
@@ -174,5 +175,20 @@ namespace AlmacenTech
             MarcaerrorProvider.Clear();
             
         }
+
+        private bool ValidarBuscar()
+        {
+            if (EquiposBLL.Buscar(RU.StringToInt(equipoIdTextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+
+            }
+
+            return true;
+
+
+        }
+
     }
 }

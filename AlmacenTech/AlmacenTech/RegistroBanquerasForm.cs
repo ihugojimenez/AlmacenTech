@@ -31,7 +31,7 @@ namespace AlmacenTech
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (validarId("Favor ingresar el id del usuario que desea buscar"))
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
                 LLenar(BanquerasBLL.Buscar(RU.StringToInt(banqueraIdTextBox.Text)));
         }
 
@@ -68,7 +68,7 @@ namespace AlmacenTech
 
         private void Deletebutton_Click_1(object sender, EventArgs e)
         {
-            if (validarId("Favor digitar el id de la banquera que desea eliminar"))
+            if (validarId("Favor digitar el id de la banquera que desea eliminar") && ValidarBuscar())
             {
                 BanquerasBLL.Eliminar(RU.StringToInt(banqueraIdTextBox.Text));
                 limpiarErrores();
@@ -77,15 +77,19 @@ namespace AlmacenTech
             }
         }
 
-        private void LLenar(Banqueras banquera)
+        private void LLenar(Banqueras b)
         {
-            banqueraIdTextBox.Text = banquera.BanqueraId.ToString();
-            nombresTextBox.Text = banquera.Nombres;
-            cedulaMaskedTextBox.Text = banquera.Cedula;
-            celularMaskedTextBox.Text = banquera.Celular;
-            telefonoMaskedTextBox.Text = banquera.Telefono;
-            direccionTextBox.Text = banquera.Direccion;
-            ApellidotextBox.Text = banquera.Apellidos;
+            banqueraIdTextBox.Text = b.BanqueraId.ToString();
+            nombresTextBox.Text = b.Nombres;
+            cedulaMaskedTextBox.Text = b.Cedula;
+            celularMaskedTextBox.Text = b.Celular;
+            telefonoMaskedTextBox.Text = b.Telefono;
+            direccionTextBox.Text = b.Direccion;
+            ApellidotextBox.Text = b.Apellidos;
+            if (b.Sexo == "M")
+                MasculinoradioButton.Checked = true;
+            if (b.Sexo == "F")
+                FemeninoradioButton.Checked = true;
 
         }    
 
@@ -103,6 +107,7 @@ namespace AlmacenTech
             MasculinoradioButton.Checked = false;
             FemeninoradioButton.Checked = false;
             fechaDateTimePicker.Value = dp.Value;
+            limpiarErrores();
         }
 
         private void fechaDateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -120,14 +125,14 @@ namespace AlmacenTech
             b.Apellidos = ApellidotextBox.Text;
             if (MasculinoradioButton.Checked == true)
             {
-                b.Sexo = 'M';
+                b.Sexo = "M";
             }
             else
             {
                 if (FemeninoradioButton.Checked == true)
-                    b.Sexo = 'F';
+                    b.Sexo = "F";
                 else
-                    b.Sexo = 'I';
+                    b.Sexo = "i";
             }
                 
             
@@ -178,6 +183,12 @@ namespace AlmacenTech
                 return false;
             }
 
+            if (MasculinoradioButton.Checked == false && FemeninoradioButton.Checked == false)
+            {
+                SexoerrorProvider.SetError(SexogroupBox, "Seleccionar sexo");
+                return false;
+            }
+
 
             /*for (int aux = 4; aux <= n; aux++)
             {
@@ -193,6 +204,20 @@ namespace AlmacenTech
 
 
 
+        }
+
+        private bool ValidarBuscar()
+        {
+            if (BanquerasBLL.Buscar(RU.StringToInt(banqueraIdTextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+                
+            }
+
+            return true;
+                
+                
         }
 
         private bool validarId(string message)
@@ -216,6 +241,7 @@ namespace AlmacenTech
             ApellidoerrorProvider.Clear();
             CelularerrorProvider.Clear();
             CedulaerrorProvider.Clear();
+            BuscarerrorProvider.Clear();
         }
 
         private void banqueraIdTextBox_TextChanged(object sender, EventArgs e)

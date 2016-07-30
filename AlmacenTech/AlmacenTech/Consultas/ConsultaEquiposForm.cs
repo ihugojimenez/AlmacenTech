@@ -15,6 +15,7 @@ namespace AlmacenTech.Consultas
     public partial class ConsultaEquiposForm : Form
     {
         Equipos equipo = new Equipos();
+        RegisterUsersForm RU = new RegisterUsersForm();
         public ConsultaEquiposForm()
         {
             InitializeComponent();
@@ -46,22 +47,14 @@ namespace AlmacenTech.Consultas
         private void BuscarSeleccion()
         {
             if (FiltrocomboBox.SelectedIndex == 0)
-                EquiposdataGridView.DataSource = EquiposBLL.GetListaId(StringToInt(FiltrotextBox.Text));
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
                 EquiposdataGridView.DataSource = EquiposBLL.GetListaMarca(FiltrotextBox.Text);
             if (FiltrocomboBox.SelectedIndex == 2)
-                EquiposdataGridView.DataSource = EquiposBLL.GetListaTipo(StringToInt(FiltrotextBox.Text));
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaTipo(RU.StringToInt(FiltrotextBox.Text));
 
         }
 
-        private int StringToInt(string texto)
-        {
-            int numero = 0;
-
-            int.TryParse(texto, out numero);
-
-            return numero;
-        }
 
         private bool validar()
         {

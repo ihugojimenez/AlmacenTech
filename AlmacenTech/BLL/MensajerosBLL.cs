@@ -11,7 +11,7 @@ namespace BLL
 {
     public static class MensajerosBLL
     {
-        public static void AgregarMensajero(Mensajeros M)
+        public static void Insertar(Mensajeros M)
         {
             try
             {
@@ -39,32 +39,27 @@ namespace BLL
 
         }
 
-        public static void EliminarMensajero(int id)
+        public static void Eliminar(int id)
         {
             var db = new AlmacenBancasDB();
             Mensajeros m = db.Mensajeros.Find(id);
-
-            /*Mensajeros m = (from p in db.Mensajeros
-                         where id == p.MensajeroId
-                         select p).FirstOrDefault();*/
             db.Mensajeros.Remove(m);
             db.SaveChanges();
         }
 
-        public static void ActualizarMensajero(int id, string nombre, string cedula, string celular, string direccion, DateTime fecha, bool sexo, string telefono)
+        public static void Actualizar(int id, Mensajeros mensajero)
         {
             var db = new AlmacenBancasDB();
 
-            Mensajeros m = (from p in db.Mensajeros
-                          where id == p.MensajeroId
-                          select p).FirstOrDefault();
-            m.Nombre = nombre;
-            m.Cedula = cedula;
-            m.Celular = celular;
-            m.Direccion = direccion;
-            m.FechaNacimiento = fecha;
-            m.Sexo = sexo;
-            m.Telefono = telefono;
+            Mensajeros m = db.Mensajeros.Find(id);
+            m.Nombre = mensajero.Nombre;
+            m.Cedula = mensajero.Cedula;
+            m.Celular = mensajero.Celular;
+            m.Direccion = mensajero.Direccion;
+            m.FechaNacimiento = mensajero.FechaNacimiento;
+            m.Sexo = mensajero.Sexo;
+            m.Telefono = mensajero.Telefono;
+            m.Apellido = mensajero.Apellido;
             db.SaveChanges();
         }
 
@@ -91,6 +86,19 @@ namespace BLL
             return lista;
 
         }
+
+        public static List<Mensajeros> GetListaApellido(string apellido)
+        {
+            List<Mensajeros> lista = new List<Mensajeros>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.Mensajeros.Where(p => p.Apellido == apellido).ToList();
+
+            return lista;
+
+        }
+
 
 
     }

@@ -30,7 +30,7 @@ namespace AlmacenTech
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if (validarId("Favor ingresar el id del usuario que desea buscar"))
+            if (validarId("Favor ingresar el id del usuario que desea buscar") && ValidarBuscar())
                 LLenar(UsuariosBLL.Buscar(StringToInt(IDtextBox.Text)));
 
 
@@ -72,7 +72,7 @@ namespace AlmacenTech
         private void Deletebutton_Click(object sender, EventArgs e)
         {
 
-            if (validarId("Favor digitar el id del usuario que desea eliminar"))
+            if (validarId("Favor digitar el id del usuario que desea eliminar") && ValidarBuscar())
             {
                 UsuariosBLL.Eliminar(StringToInt(IDtextBox.Text));
                 limpiarErrores();
@@ -101,6 +101,7 @@ namespace AlmacenTech
             PassTextBox.Text = "";
             ConfPassTextBox.Text = "";
             PermisocomboBox.SelectedValue = 1;
+            limpiarErrores();
 
         }
              
@@ -210,6 +211,20 @@ namespace AlmacenTech
             PermisocomboBox.ValueMember = "IdPermiso";
             PermisocomboBox.DisplayMember = "Detalle";
         }
-        
+
+        private bool ValidarBuscar()
+        {
+            if (UsuariosBLL.Buscar(StringToInt(IDtextBox.Text)) == null)
+            {
+                MessageBox.Show("Este registro no existe");
+                return false;
+
+            }
+
+            return true;
+
+
+        }
+
     }
 }

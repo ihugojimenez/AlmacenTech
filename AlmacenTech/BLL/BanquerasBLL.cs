@@ -10,8 +10,9 @@ namespace BLL
 {
     public static class BanquerasBLL
     {
-        public static void Insertar(Banqueras B)
+        public static bool Insertar(Banqueras B)
         {
+            bool retorno = false;
             try
             {
                 using (var db = new AlmacenBancasDB())
@@ -19,12 +20,15 @@ namespace BLL
                     db.Banqueras.Add(B);
                     db.SaveChanges();
                     db.Dispose();
+                    retorno = true;
                 }
             }
             catch (Exception exx)
             {
                 throw exx;
             }
+
+            return retorno;
 
 
         }

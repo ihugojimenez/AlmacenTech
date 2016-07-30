@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace AlmacenTech.Consultas
 {
     public partial class ConsultaMensajerosForm : Form
     {
+        Mensajeros mensajero = new Mensajeros();
+        RegisterUsersForm RU = new RegisterUsersForm();
         public ConsultaMensajerosForm()
         {
             InitializeComponent();
@@ -20,14 +23,46 @@ namespace AlmacenTech.Consultas
 
         private void ConsultaMensajerosForm_Load(object sender, EventArgs e)
         {
-            MensajerosdataGridView.DataSource = MensajerosBLL.GetLista();
+            Cargar();
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            MensajerosdataGridView.DataSource = MensajerosBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
+            if (validar())
+                BuscarSeleccion();
         }
 
-        
+        private void Cargar()
+        {
+            FiltrocomboBox.Items.Insert(0, "ID");
+            FiltrocomboBox.Items.Insert(1, "Apellido");
+            FiltrocomboBox.DataSource = FiltrocomboBox.Items;
+            FiltrocomboBox.DisplayMember = "ID";
+            MensajerosdataGridView.DataSource = MensajerosBLL.GetLista();
+        }
+
+        private void BuscarSeleccion()
+        {
+            if (FiltrocomboBox.SelectedIndex == 0)
+                MensajerosdataGridView.DataSource = MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text));
+            if (FiltrocomboBox.SelectedIndex == 1)
+                MensajerosdataGridView.DataSource = MensajerosBLL.GetListaApellido(FiltrotextBox.Text);
+
+        }
+
+
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            {
+                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                return false;
+            }
+            BuscarerrorProvider.Clear();
+
+            return true;
+        }
+
+
     }
 }
