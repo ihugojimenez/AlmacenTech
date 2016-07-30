@@ -114,7 +114,7 @@
             // 
             this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Buscarbutton.Location = new System.Drawing.Point(608, 11);
+            this.Buscarbutton.Location = new System.Drawing.Point(715, 11);
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(2);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(55, 45);
@@ -127,9 +127,9 @@
             // 
             this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
-            this.FiltrocomboBox.Location = new System.Drawing.Point(432, 17);
+            this.FiltrocomboBox.Location = new System.Drawing.Point(457, 17);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
-            this.FiltrocomboBox.Size = new System.Drawing.Size(171, 21);
+            this.FiltrocomboBox.Size = new System.Drawing.Size(224, 21);
             this.FiltrocomboBox.TabIndex = 2;
             // 
             // FiltrotextBox

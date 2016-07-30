@@ -48,6 +48,12 @@ namespace AlmacenTech.Consultas
                 BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                 return false;
             }
+            if(UsuariosBLL.GetListaId(StringToInt(FiltrotextBox.Text)).Count == 0 || UsuariosBLL.GetListaIdPermiso(StringToInt(FiltrotextBox.Text)).Count==0 || UsuariosBLL.GetApellido(FiltrotextBox.Text).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+                
+            }
             
 
             return true;
@@ -71,5 +77,7 @@ namespace AlmacenTech.Consultas
             FiltrocomboBox.DisplayMember = "ID";
             UsuariosdataGridView.DataSource = UsuariosBLL.GetLista();
         }
+
+
     }
 }

@@ -106,6 +106,17 @@ namespace BLL
 
         }
 
+        public static List<Equipos> GetListaSerial(string aux)
+        {
+            List<Equipos> lista = new List<Equipos>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.equipo.Where(p => p.SerialNum == aux).ToList();
+
+            return lista;
+
+        }
 
 
     }

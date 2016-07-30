@@ -102,5 +102,19 @@ namespace BLL
 
         }
 
+        public static List<Banqueras> GetListaCedula(string a)
+        {
+            List<Banqueras> lista = new List<Banqueras>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.Banqueras.Where(p => p.Cedula == a).ToList();
+
+            return lista;
+
+        }
+
+
+
     }
 }

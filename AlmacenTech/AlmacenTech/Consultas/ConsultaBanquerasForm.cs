@@ -66,6 +66,12 @@ namespace AlmacenTech.Consultas
                 BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                 return false;
             }
+            if (BanquerasBLL.GetListaApellido(FiltrotextBox.Text).Count == 0 || BanquerasBLL.GetListaId(StringToInt(FiltrotextBox.Text)).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
             BuscarerrorProvider.Clear();
 
             return true;

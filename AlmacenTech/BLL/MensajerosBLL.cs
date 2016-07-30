@@ -99,7 +99,17 @@ namespace BLL
 
         }
 
+        public static List<Mensajeros> GetListaCedula(string a)
+        {
+            List<Mensajeros> lista = new List<Mensajeros>();
 
+            var db = new AlmacenBancasDB();
+
+            lista = db.Mensajeros.Where(p => p.Cedula == a).ToList();
+
+            return lista;
+
+        }
 
     }
 }

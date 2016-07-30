@@ -44,7 +44,7 @@ namespace AlmacenTech
         {
             BuscarerrorProvider.Clear();
             LlenarClase(banquera);
-            if (ValidarTextbox())
+            if (ValidarTextbox() && ValidarExiste(cedulaMaskedTextBox.Text))
             {
                 BanquerasBLL.Insertar(banquera);
                 limpiar();
@@ -249,5 +249,16 @@ namespace AlmacenTech
             
             
         }
+
+        private bool ValidarExiste(string aux)
+        {
+            if (BanquerasBLL.GetListaCedula(aux).Count() > 0)
+            {
+                MessageBox.Show("Esta banquera ya esta registrada." + "\n" + "\n" + "Verifique que todos los datos estan ingresados correcatamente..");
+                return false;
+            }
+            return true;
+        }
+
     }
 }

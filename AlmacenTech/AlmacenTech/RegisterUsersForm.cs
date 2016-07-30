@@ -45,7 +45,7 @@ namespace AlmacenTech
         {
             BuscarerrorProvider.Clear();
             LlenarClase(usuario);
-            if (ValidarTextbox())
+            if (ValidarTextbox() && ValidarExiste(UserNameTextBox.Text))
             {
                 UsuariosBLL.Insertar(usuario);
                 limpiar();
@@ -226,5 +226,14 @@ namespace AlmacenTech
 
         }
 
+        private bool ValidarExiste(string aux)
+        {
+            if(UsuariosBLL.GetListaNombreUsuario(aux).Count() > 0) 
+            {
+                MessageBox.Show("Este nombre de Usuario ya existe, favor intentar con otro nombre de usario...");
+                return false;
+            }
+            return true;
+        }
     }
 }

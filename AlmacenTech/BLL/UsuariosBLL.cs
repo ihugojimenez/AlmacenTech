@@ -110,6 +110,17 @@ namespace BLL
         }
 
 
+        public static List<Usuarios> GetListaNombreUsuario(string aux)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.Where(p => p.NombreUsuario == aux).ToList();
+
+            return lista;
+
+        }
 
         public static int Cantidad()
         {

@@ -92,7 +92,7 @@
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(348, 22);
-            this.NameTextBox.TabIndex = 2;
+            this.NameTextBox.TabIndex = 3;
             // 
             // ApellidoTextBox
             // 
@@ -102,7 +102,7 @@
             this.ApellidoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ApellidoTextBox.Name = "ApellidoTextBox";
             this.ApellidoTextBox.Size = new System.Drawing.Size(348, 22);
-            this.ApellidoTextBox.TabIndex = 3;
+            this.ApellidoTextBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -123,7 +123,7 @@
             this.UserNameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(267, 22);
-            this.UserNameTextBox.TabIndex = 4;
+            this.UserNameTextBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -139,12 +139,12 @@
             // PassTextBox
             // 
             this.PassTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassTextBox.Location = new System.Drawing.Point(99, 173);
+            this.PassTextBox.Location = new System.Drawing.Point(99, 171);
             this.PassTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.PassTextBox.Name = "PassTextBox";
             this.PassTextBox.PasswordChar = '*';
             this.PassTextBox.Size = new System.Drawing.Size(321, 22);
-            this.PassTextBox.TabIndex = 6;
+            this.PassTextBox.TabIndex = 7;
             // 
             // label5
             // 
@@ -165,7 +165,7 @@
             this.ConfPassTextBox.Name = "ConfPassTextBox";
             this.ConfPassTextBox.PasswordChar = '*';
             this.ConfPassTextBox.Size = new System.Drawing.Size(251, 22);
-            this.ConfPassTextBox.TabIndex = 7;
+            this.ConfPassTextBox.TabIndex = 8;
             // 
             // ButtonsgroupBox
             // 
@@ -179,7 +179,7 @@
             this.ButtonsgroupBox.Name = "ButtonsgroupBox";
             this.ButtonsgroupBox.Padding = new System.Windows.Forms.Padding(2);
             this.ButtonsgroupBox.Size = new System.Drawing.Size(544, 80);
-            this.ButtonsgroupBox.TabIndex = 17;
+            this.ButtonsgroupBox.TabIndex = 9;
             this.ButtonsgroupBox.TabStop = false;
             this.ButtonsgroupBox.Text = "Opciones";
             // 
@@ -223,7 +223,7 @@
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 58);
-            this.NewButton.TabIndex = 9;
+            this.NewButton.TabIndex = 1;
             this.NewButton.Text = "Nuevo";
             this.NewButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.NewButton.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(60, 44);
-            this.searchButton.TabIndex = 8;
+            this.searchButton.TabIndex = 2;
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
@@ -301,7 +301,7 @@
             this.PermisocomboBox.Location = new System.Drawing.Point(627, 122);
             this.PermisocomboBox.Name = "PermisocomboBox";
             this.PermisocomboBox.Size = new System.Drawing.Size(265, 21);
-            this.PermisocomboBox.TabIndex = 5;
+            this.PermisocomboBox.TabIndex = 6;
             // 
             // NombreUsuarioerrorProvider
             // 

@@ -53,10 +53,18 @@ namespace AlmacenTech.Consultas
 
         private bool validar()
         {
+
             if (string.IsNullOrEmpty(FiltrotextBox.Text))
             {
                 BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                 return false;
+            }
+
+            if(MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count == 0 || MensajerosBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
             }
             BuscarerrorProvider.Clear();
 

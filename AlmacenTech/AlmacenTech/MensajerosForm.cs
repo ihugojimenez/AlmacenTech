@@ -236,6 +236,16 @@ namespace AlmacenTech
 
         }
 
+        private bool ValidarExiste(string aux)
+        {
+            if (MensajerosBLL.GetListaCedula(aux).Count() > 0)
+            {
+                MessageBox.Show("Este mensajero ya esta registrado." + "\n" + "\n" + "Verifique que todos los datos estan ingresados correcatamente..");
+                return false;
+            }
+            return true;
+        }
+
 
     }
 }

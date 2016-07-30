@@ -45,7 +45,7 @@ namespace AlmacenTech
         {
             BuscarerrorProvider.Clear();
             LlenarClase(equipo);
-            if (ValidarTextbox())
+            if (ValidarTextbox() && ValidarExiste(serialNumTextBox.Text))
             {
                 EquiposBLL.Insertar(equipo);
                 limpiar();
@@ -188,6 +188,16 @@ namespace AlmacenTech
             return true;
 
 
+        }
+
+        private bool ValidarExiste(string aux)
+        {
+            if (EquiposBLL.GetListaSerial(aux).Count() > 0)
+            {
+                MessageBox.Show("Este Equipo ya existe." + "\n" + "Verifique que el serial esta ingresado correctamente");
+                return false;
+            }
+            return true;
         }
 
     }
