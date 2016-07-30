@@ -92,7 +92,7 @@ namespace AlmacenTech
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(bancaIdTextBox.Text))
+           /* if (string.IsNullOrEmpty(bancaIdTextBox.Text))
             {
                 BuscarerrorProvider.SetError(bancaIdTextBox, "Favor digitar el ID de la banca que desea eliminar");
             }
@@ -102,7 +102,7 @@ namespace AlmacenTech
                 EquiposBLL.EliminarEquipo(Convert.ToInt32(bancaIdTextBox.Text));
                 bancaIdTextBox.Text = "";
                 MessageBox.Show("ELiminado con exito");
-            }
+            }*/
         }
     }
 }

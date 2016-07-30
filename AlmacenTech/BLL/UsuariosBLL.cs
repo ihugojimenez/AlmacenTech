@@ -51,9 +51,7 @@ namespace BLL
         {
             var db = new AlmacenBancasDB();
 
-            Usuarios u = (from p in db.usuario
-                          where id == p.UsuarioId
-                          select p).FirstOrDefault();
+            Usuarios u = db.usuario.Find(id);
 
             u.Apellido = usuario.Apellido;
             u.Contraseña = usuario.Contraseña;

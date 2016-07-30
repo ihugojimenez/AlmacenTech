@@ -10,7 +10,7 @@ namespace BLL
 {
     public static class EquiposBLL
     {
-        public static void AgregarEquipo(Equipos eq)
+        public static void Insertar(Equipos eq)
         {
             try
             {
@@ -37,27 +37,23 @@ namespace BLL
 
         }
 
-        public static void EliminarEquipo(int id)
+        public static void Eliminar(int id)
         {
             var db = new AlmacenBancasDB();
+            Equipos eq = db.equipo.Find(id);
 
-            Equipos u = (from p in db.equipo
-                          where id == p.EquipoId
-                          select p).FirstOrDefault();
-            db.equipo.Remove(u);
+            db.equipo.Remove(eq);
             db.SaveChanges();
         }
 
-        public static void ActualizarEquipo(int id, string MarcaEquipo, string SerialEquipo, int TipoEquipo )
+        public static void Actualizar(int id, Equipos equipo)
         {
             var db = new AlmacenBancasDB();
 
-            Equipos eq = (from p in db.equipo
-                          where id == p.EquipoId
-                          select p).FirstOrDefault();
-            eq.MarcaEquipo = MarcaEquipo;
-            eq.SerialNum = SerialEquipo;
-            eq.TipoId = TipoEquipo;
+            Equipos eq = db.equipo.Find(id);
+            eq.MarcaEquipo = equipo.MarcaEquipo;
+            eq.SerialNum = equipo.SerialNum;
+            eq.TipoId = equipo.TipoId;
             db.SaveChanges();
         }
 
@@ -84,6 +80,33 @@ namespace BLL
             return lista;
 
         }
+
+
+        public static List<Equipos> GetListaMarca(string m)
+        {
+            List<Equipos> lista = new List<Equipos>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.equipo.Where(p => p.MarcaEquipo == m).ToList();
+
+            return lista;
+
+        }
+
+        public static List<Equipos> GetListaTipo(int tipoid)
+        {
+            List<Equipos> lista = new List<Equipos>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.equipo.Where(p => p.TipoId == tipoid).ToList();
+
+            return lista;
+
+        }
+
+
 
     }
 }

@@ -22,13 +22,59 @@ namespace AlmacenTech.Consultas
 
         private void ConsultaEquiposForm_Load(object sender, EventArgs e)
         {
-            EquiposdataGridView.DataSource = EquiposBLL.GetLista();
+            Cargar();
             
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
-            EquiposdataGridView.DataSource = EquiposBLL.GetListaId(Convert.ToInt32(FiltrotextBox.Text));
+            if (validar())
+                BuscarSeleccion();
+            
         }
+
+        private void Cargar()
+        {
+            FiltrocomboBox.Items.Insert(0, "ID");
+            FiltrocomboBox.Items.Insert(1, "Marca");
+            FiltrocomboBox.Items.Insert(2, "ID Tipo de equipo");
+            FiltrocomboBox.DataSource = FiltrocomboBox.Items;
+            FiltrocomboBox.DisplayMember = "ID";
+            EquiposdataGridView.DataSource = EquiposBLL.GetLista();
+        }
+
+        private void BuscarSeleccion()
+        {
+            if (FiltrocomboBox.SelectedIndex == 0)
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaId(StringToInt(FiltrotextBox.Text));
+            if (FiltrocomboBox.SelectedIndex == 1)
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaMarca(FiltrotextBox.Text);
+            if (FiltrocomboBox.SelectedIndex == 2)
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaTipo(StringToInt(FiltrotextBox.Text));
+
+        }
+
+        private int StringToInt(string texto)
+        {
+            int numero = 0;
+
+            int.TryParse(texto, out numero);
+
+            return numero;
+        }
+
+        private bool validar()
+        {
+            if (string.IsNullOrEmpty(FiltrotextBox.Text))
+            {
+                BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
+                return false;
+            }
+            BuscarerrorProvider.Clear();
+
+            return true;
+        }
+
+        
     }
 }

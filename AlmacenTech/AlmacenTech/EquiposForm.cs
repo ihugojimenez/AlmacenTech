@@ -14,6 +14,7 @@ namespace AlmacenTech
 {
     public partial class EquiposForm : Form
     {
+        Equipos equipo = new Equipos();
         public EquiposForm()
         {
             InitializeComponent();
@@ -23,80 +24,56 @@ namespace AlmacenTech
 
         private void EquiposForm_Load(object sender, EventArgs e)
         {
-            tipoEquipoComboBox.DataSource = TiposEquiposBLL.GetLista();
-            tipoEquipoComboBox.ValueMember = "TipoId";
-            tipoEquipoComboBox.DisplayMember = "Detalle";
+            Cargar();
 
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(equipoIdTextBox.Text))
-            {
-                BuscarerrorProvider.SetError(equipoIdTextBox, "Favor digitar el ID del Equipo que desea buscar");
-            }
-            else
-            {
-                LLenar(EquiposBLL.Buscar(Convert.ToInt32(equipoIdTextBox.Text)));
-
-            }
+            if (validarId("Favor ingresar el id del usuario que desea buscar"))
+                LLenar(EquiposBLL.Buscar(StringToInt(equipoIdTextBox.Text)));
+     
         }
 
-        private void Deletebutton_Click(object sender, EventArgs e)
+        private void NewButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(equipoIdTextBox.Text))
+            limpiar();
+        }
+
+        private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+            BuscarerrorProvider.Clear();
+            LlenarClase(equipo);
+            if (ValidarTextbox())
             {
-                BuscarerrorProvider.SetError(equipoIdTextBox, "Favor digitar el ID del equipo que desea eliminar");
-            }
-            else
-            {
-                BuscarerrorProvider.Clear();
-                EquiposBLL.EliminarEquipo(Convert.ToInt32(equipoIdTextBox.Text));
+                EquiposBLL.Insertar(equipo);
                 limpiar();
-                MessageBox.Show("ELiminado con exito");
+                MessageBox.Show("Guardado con exito");
             }
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(equipoIdTextBox.Text))
+            if (validarId("Favor Buscar el equipo que desea actualizar") && ValidarTextbox())
             {
-                BuscarerrorProvider.SetError(equipoIdTextBox, "Favor buscar el ID del equipo que desea actualizar");
-            }
-            else
-            {
-                BuscarerrorProvider.Clear();
-                if (marcaEquipoTextBox.Text == "" || serialNumTextBox.Text == " ")
-                {
-                    MessageBox.Show("Buscar el ID del usuario que desea Actualizar");
-                }
-                else
-                {
-                    EquiposBLL.ActualizarEquipo(Convert.ToInt32(equipoIdTextBox.Text), marcaEquipoTextBox.Text, serialNumTextBox.Text, (int)tipoEquipoComboBox.SelectedValue);
-                    limpiar();
-                }
 
+                LlenarClase(equipo);
+                EquiposBLL.Actualizar(StringToInt(equipoIdTextBox.Text), equipo);
+                limpiar();
+                MessageBox.Show("Actualizado con exito");
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void Deletebutton_Click(object sender, EventArgs e)
         {
-            Equipos E = new Equipos();
-            E.MarcaEquipo = marcaEquipoTextBox.Text;
-            E.SerialNum = serialNumTextBox.Text;
-            E.TipoId = (int)tipoEquipoComboBox.SelectedValue;
-            
-
-            if (marcaEquipoTextBox.Text == "" || serialNumTextBox.Text == " ")
+            if (validarId("Favor digitar el id del equipo que desea eliminar"))
             {
-                MessageBox.Show("Favor llenar todos los campos");
-            }
-            else
-            {
-                EquiposBLL.AgregarEquipo(E);
+                EquiposBLL.Eliminar(Convert.ToInt32(equipoIdTextBox.Text));
+                limpiarErrores();
                 limpiar();
+                MessageBox.Show("ELiminado con exito");
             }
-         }
+        }
 
         private void limpiar()
         {
@@ -115,9 +92,95 @@ namespace AlmacenTech
             tipoEquipoComboBox.SelectedValue = equipo.TipoId;
         }
 
+        private bool validarId(string message)
+        {
+            if (string.IsNullOrEmpty(equipoIdTextBox.Text))
+            {
+                BuscarerrorProvider.SetError(equipoIdTextBox, "Ingresar el ID");
+                MessageBox.Show(message);
+                return false;
+            }
+            else
+            {
+
+                return true;
+            }
+        }
+
+        public int StringToInt(string texto)
+        {
+            int numero = 0;
+
+            int.TryParse(texto, out numero);
+
+            return numero;
+        }
+
         private void tipoEquipoComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cargar()
+        {
+            tipoEquipoComboBox.DataSource = TiposEquiposBLL.GetLista();
+            tipoEquipoComboBox.ValueMember = "TipoId";
+            tipoEquipoComboBox.DisplayMember = "Detalle";
+        }
+
+        private void LlenarClase(Equipos E)
+        {
+            E.MarcaEquipo = marcaEquipoTextBox.Text;
+            E.SerialNum = serialNumTextBox.Text;
+            E.TipoId = (int)tipoEquipoComboBox.SelectedValue;
+
+
+        }
+
+        private bool ValidarTextbox()
+        {
+            
+            if (string.IsNullOrEmpty(marcaEquipoTextBox.Text) && string.IsNullOrEmpty(serialNumTextBox.Text))
+            {
+                MarcaerrorProvider.SetError(marcaEquipoTextBox, "Favor ingresar la marca del equipo");
+                SerialerrorProvider.SetError(serialNumTextBox, "Favor ingresar el serial del equipo");
+                MessageBox.Show("Favor llenar todos los campos obligatorios");
+
+            }
+            if (string.IsNullOrEmpty(marcaEquipoTextBox.Text))
+            {
+                MarcaerrorProvider.SetError(marcaEquipoTextBox, "Favor ingresar la marca del equipo");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(serialNumTextBox.Text))
+            {
+                MarcaerrorProvider.Clear();
+                SerialerrorProvider.SetError(serialNumTextBox, "Favor ingresar el serial del equipo");
+                return false;
+            }
+
+            /*for (int aux = 4; aux <= n; aux++)
+            {
+                if (UserNameTextBox.Text == UsuariosBLL.Buscar(aux).NombreUsuario)
+                {
+                    MessageBox.Show("EL Nombre de usuario que intenta ingresar ya existe");
+                    return false;
+                }
+            }*/
+
+            return true;
+
+
+
+
+        }
+
+        private void limpiarErrores()
+        {
+            SerialerrorProvider.Clear();
+            MarcaerrorProvider.Clear();
+            
         }
     }
 }

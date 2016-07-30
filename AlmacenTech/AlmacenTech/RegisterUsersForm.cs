@@ -23,10 +23,8 @@ namespace AlmacenTech
 
         private void RegisterUsersForm_Load(object sender, EventArgs e)
         {
-            
-            PermisocomboBox.DataSource = PermisoUsuariosBLL.GetLista();
-            PermisocomboBox.ValueMember = "IdPermiso";
-            PermisocomboBox.DisplayMember = "Detalle";
+
+            Cargar();
             
         }
 
@@ -85,14 +83,6 @@ namespace AlmacenTech
 
         }
 
-        private void UpdateButton_Click(object sender, EventArgs e)
-        {
-
-            //string aux = ConfPassTextBox.Text;
-            /* */
-
-        }
-
         private void LLenar(Usuarios usuario)
         {
             IDtextBox.Text = usuario.UsuarioId.ToString();
@@ -101,8 +91,6 @@ namespace AlmacenTech
             ApellidoTextBox.Text = usuario.Apellido;
             PassTextBox.Text = usuario.Contraseña;
         }
-
-
 
         private void limpiar()
         {
@@ -115,8 +103,7 @@ namespace AlmacenTech
             PermisocomboBox.SelectedValue = 1;
 
         }
-
-        
+             
         private bool validarId(string message)
         {
             if (string.IsNullOrEmpty(IDtextBox.Text))
@@ -217,7 +204,12 @@ namespace AlmacenTech
         }
         //Todavia tengo que validar cuando existe un usuario registrado...
 
-        
+        private void Cargar()
+        {
+            PermisocomboBox.DataSource = PermisoUsuariosBLL.GetLista();
+            PermisocomboBox.ValueMember = "IdPermiso";
+            PermisocomboBox.DisplayMember = "Detalle";
+        }
         
     }
 }
