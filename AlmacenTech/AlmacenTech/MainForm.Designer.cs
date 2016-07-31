@@ -41,6 +41,7 @@
             this.consultaDeMensajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeBanquerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDePaquetesDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PrincipalmenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@
             this.registrarBancaToolStripMenuItem,
             this.registrarEquiposToolStripMenuItem,
             this.registroDeUsuariosToolStripMenuItem,
-            this.registroDeTiposDeEquiposToolStripMenuItem});
+            this.registroDeTiposDeEquiposToolStripMenuItem,
+            this.registroDePaquetesDeEquiposToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
             this.archivoToolStripMenuItem.Text = "Registros";
@@ -75,42 +77,42 @@
             // registrarMensajeroToolStripMenuItem
             // 
             this.registrarMensajeroToolStripMenuItem.Name = "registrarMensajeroToolStripMenuItem";
-            this.registrarMensajeroToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registrarMensajeroToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registrarMensajeroToolStripMenuItem.Text = "Registrar Mensajeros";
             this.registrarMensajeroToolStripMenuItem.Click += new System.EventHandler(this.registrarMensajeroToolStripMenuItem_Click);
             // 
             // registrarBanqueraToolStripMenuItem
             // 
             this.registrarBanqueraToolStripMenuItem.Name = "registrarBanqueraToolStripMenuItem";
-            this.registrarBanqueraToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registrarBanqueraToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registrarBanqueraToolStripMenuItem.Text = "Registrar Banqueras";
             this.registrarBanqueraToolStripMenuItem.Click += new System.EventHandler(this.registrarBanqueraToolStripMenuItem_Click);
             // 
             // registrarBancaToolStripMenuItem
             // 
             this.registrarBancaToolStripMenuItem.Name = "registrarBancaToolStripMenuItem";
-            this.registrarBancaToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registrarBancaToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registrarBancaToolStripMenuItem.Text = "Registrar Bancas";
             this.registrarBancaToolStripMenuItem.Click += new System.EventHandler(this.registrarBancaToolStripMenuItem_Click);
             // 
             // registrarEquiposToolStripMenuItem
             // 
             this.registrarEquiposToolStripMenuItem.Name = "registrarEquiposToolStripMenuItem";
-            this.registrarEquiposToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registrarEquiposToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registrarEquiposToolStripMenuItem.Text = "Registrar Equipos";
             this.registrarEquiposToolStripMenuItem.Click += new System.EventHandler(this.registrarEquiposToolStripMenuItem_Click);
             // 
             // registroDeUsuariosToolStripMenuItem
             // 
             this.registroDeUsuariosToolStripMenuItem.Name = "registroDeUsuariosToolStripMenuItem";
-            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registroDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registroDeUsuariosToolStripMenuItem.Text = "Registro de Usuarios";
             this.registroDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.registroDeUsuariosToolStripMenuItem_Click);
             // 
             // registroDeTiposDeEquiposToolStripMenuItem
             // 
             this.registroDeTiposDeEquiposToolStripMenuItem.Name = "registroDeTiposDeEquiposToolStripMenuItem";
-            this.registroDeTiposDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(280, 26);
+            this.registroDeTiposDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.registroDeTiposDeEquiposToolStripMenuItem.Text = "Registro de Tipos de Equipos";
             this.registroDeTiposDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeEquiposToolStripMenuItem_Click);
             // 
@@ -153,6 +155,13 @@
             this.consultaDeBanquerasToolStripMenuItem.Text = "Consulta de Banqueras";
             this.consultaDeBanquerasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeBanquerasToolStripMenuItem_Click);
             // 
+            // registroDePaquetesDeEquiposToolStripMenuItem
+            // 
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Name = "registroDePaquetesDeEquiposToolStripMenuItem";
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Text = "Registro de Paquetes de Equipos";
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDePaquetesDeEquiposToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +170,7 @@
             this.Controls.Add(this.PrincipalmenuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.PrincipalmenuStrip;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(699, 481);
             this.Name = "MainForm";
             this.ShowIcon = false;
@@ -188,5 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultaDeMensajerosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultaDeBanquerasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDePaquetesDeEquiposToolStripMenuItem;
     }
 }

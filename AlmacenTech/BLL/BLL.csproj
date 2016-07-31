@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BancasBLL.cs" />
     <Compile Include="BanquerasBLL.cs" />
+    <Compile Include="EquiposAsignadosBLL.cs" />
     <Compile Include="EquiposBLL.cs" />
     <Compile Include="MensajerosBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

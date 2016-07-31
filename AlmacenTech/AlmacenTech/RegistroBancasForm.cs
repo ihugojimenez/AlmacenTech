@@ -21,7 +21,7 @@ namespace AlmacenTech
 
         private void RegistroBancasForm_Load(object sender, EventArgs e)
         {
-            equipoIdComboBox.DataSource = EquiposBLL.GetLista();
+            /*Equiposcom.DataSource = EquiposBLL.GetLista();
             equipoIdComboBox.ValueMember = "EquipoId";
             equipoIdComboBox.DisplayMember = "MarcaEquipo";
 
@@ -53,7 +53,7 @@ namespace AlmacenTech
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(bancaIdTextBox.Text))
+            /*if (string.IsNullOrEmpty(bancaIdTextBox.Text))
             {
                 BuscarerrorProvider.SetError(bancaIdTextBox, "Favor buscar el ID de la banca que desea actualizar");
             }
@@ -65,28 +65,28 @@ namespace AlmacenTech
                 bancaIdTextBox.Text = "";
                 
 
-            }
+            }*/
         }
 
         private void LLenar(Bancas banca)
         {
-            bancaIdTextBox.Text = banca.BancaId.ToString();
+            /*bancaIdTextBox.Text = banca.BancaId.ToString();
             banqueraIdComboBox.SelectedValue = banca.BanqueraId;
             equipoIdComboBox.SelectedValue = banca.EquipoId;
-            rutaIdComboBox.SelectedValue = banca.RutaId;
+            rutaIdComboBox.SelectedValue = banca.RutaId;*/
 
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bancas b = new Bancas();
+            /*Bancas b = new Bancas();
             b.BanqueraId = (int)banqueraIdComboBox.SelectedValue;
             b.EquipoId = (int)equipoIdComboBox.SelectedValue;
             b.RutaId = (int)rutaIdComboBox.SelectedValue;
 
             BancasBLL.AgregarBancas(b);
-            bancaIdTextBox.Text = "";
+            bancaIdTextBox.Text = "";*/
 
         }
 

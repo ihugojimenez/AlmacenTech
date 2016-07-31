@@ -165,6 +165,12 @@
     <Compile Include="RegistroBanquerasForm.Designer.cs">
       <DependentUpon>RegistroBanquerasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="rEquiposAsignadossForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rEquiposAsignadossForm.Designer.cs">
+      <DependentUpon>rEquiposAsignadossForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="rTiposEquipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,6 +235,9 @@
       <DependentUpon>RegistroBanquerasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ListarEquipos.rdlc" />
+    <EmbeddedResource Include="rEquiposAsignadossForm.resx">
+      <DependentUpon>rEquiposAsignadossForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rTiposEquipos.resx">
       <DependentUpon>rTiposEquipos.cs</DependentUpon>
     </EmbeddedResource>

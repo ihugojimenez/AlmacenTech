@@ -53,7 +53,9 @@
     <Compile Include="Banqueras.cs" />
     <Compile Include="Entradas.cs" />
     <Compile Include="Equipos.cs" />
+    <Compile Include="EquiposAsignados.cs" />
     <Compile Include="Mensajeros.cs" />
+    <Compile Include="PaqueteEquipos.cs" />
     <Compile Include="PermisoUsuarios.cs" />
     <Compile Include="Prestamos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

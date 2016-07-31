@@ -98,5 +98,12 @@ namespace AlmacenTech
         {
 
         }
+
+        private void registroDePaquetesDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEquiposAsignadossForm PF = new rEquiposAsignadossForm();
+            PF.MdiParent = this;
+            PF.Show();
+        }
     }
 }
