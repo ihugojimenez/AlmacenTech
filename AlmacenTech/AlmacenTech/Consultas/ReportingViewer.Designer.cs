@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportingViewer));
             this.RptViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
@@ -35,17 +36,21 @@
             // 
             this.RptViewer.Location = new System.Drawing.Point(12, 12);
             this.RptViewer.Name = "RptViewer";
-            this.RptViewer.Size = new System.Drawing.Size(580, 381);
+            this.RptViewer.Size = new System.Drawing.Size(685, 420);
             this.RptViewer.TabIndex = 0;
             // 
             // ReportingViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 405);
+            this.ClientSize = new System.Drawing.Size(707, 444);
             this.Controls.Add(this.RptViewer);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(723, 483);
+            this.MinimumSize = new System.Drawing.Size(723, 483);
             this.Name = "ReportingViewer";
-            this.Text = "ReportingViewer";
+            this.Text = "Reporte de Equipos";
             this.Load += new System.EventHandler(this.ReportingViewer_Load);
             this.ResumeLayout(false);
 

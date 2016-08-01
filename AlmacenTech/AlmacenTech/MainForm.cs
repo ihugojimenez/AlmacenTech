@@ -83,6 +83,8 @@ namespace AlmacenTech
         private void consultaDeEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaEquiposForm CE = new ConsultaEquiposForm();
+            ReportingViewer rpt = new ReportingViewer();
+            rpt.MdiParent = this; 
             CE.MdiParent = this;
             CE.Show();
         }

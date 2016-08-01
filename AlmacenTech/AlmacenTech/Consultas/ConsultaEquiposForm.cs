@@ -104,12 +104,12 @@ namespace AlmacenTech.Consultas
             viewer.RptViewer.Reset();
             viewer.RptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
 
-            viewer.RptViewer.LocalReport.ReportPath = @"C:\Users\Henry O\Source\Repos\AlmacenTech2\AlmacenTech\AlmacenTech\Reportes\ListarEquipos.rdlc";
+            viewer.RptViewer.LocalReport.ReportPath = @"C:\Users\Henry O\Source\Repos\AlmacenTech2\AlmacenTech\AlmacenTech\Reportes\ListadoEquipos.rdlc";
 
             viewer.RptViewer.LocalReport.DataSources.Clear();
 
             viewer.RptViewer.LocalReport.DataSources.Add(
-                new ReportDataSource("Equipos",
+                new ReportDataSource("DataSetEquipos",
                 EquiposBLL.GetLista()));
 
             viewer.RptViewer.LocalReport.Refresh();

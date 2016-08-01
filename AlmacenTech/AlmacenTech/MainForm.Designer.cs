@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.PrincipalmenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarMensajeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,12 +37,12 @@
             this.registrarEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeTiposDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDePaquetesDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeMensajerosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaDeBanquerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDePaquetesDeEquiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PrincipalmenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,6 +117,13 @@
             this.registroDeTiposDeEquiposToolStripMenuItem.Text = "Registro de Tipos de Equipos";
             this.registroDeTiposDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDeTiposDeEquiposToolStripMenuItem_Click);
             // 
+            // registroDePaquetesDeEquiposToolStripMenuItem
+            // 
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Name = "registroDePaquetesDeEquiposToolStripMenuItem";
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Text = "Registro de Paquetes de Equipos";
+            this.registroDePaquetesDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDePaquetesDeEquiposToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -155,17 +163,12 @@
             this.consultaDeBanquerasToolStripMenuItem.Text = "Consulta de Banqueras";
             this.consultaDeBanquerasToolStripMenuItem.Click += new System.EventHandler(this.consultaDeBanquerasToolStripMenuItem_Click);
             // 
-            // registroDePaquetesDeEquiposToolStripMenuItem
-            // 
-            this.registroDePaquetesDeEquiposToolStripMenuItem.Name = "registroDePaquetesDeEquiposToolStripMenuItem";
-            this.registroDePaquetesDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
-            this.registroDePaquetesDeEquiposToolStripMenuItem.Text = "Registro de Paquetes de Equipos";
-            this.registroDePaquetesDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.registroDePaquetesDeEquiposToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(683, 442);
             this.Controls.Add(this.PrincipalmenuStrip);
             this.IsMdiContainer = true;

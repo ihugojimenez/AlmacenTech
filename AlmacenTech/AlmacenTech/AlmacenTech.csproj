@@ -77,6 +77,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlmacenBancasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlmacenBancasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AlmacenTechDataSet.cs">
       <DependentUpon>AlmacenTechDataSet.xsd</DependentUpon>
     </Compile>
@@ -216,6 +221,7 @@
     <EmbeddedResource Include="EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoEquipos.rdlc" />
     <EmbeddedResource Include="rEquiposForm.resx">
       <DependentUpon>rEquiposForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,7 +255,6 @@
     <EmbeddedResource Include="RegistroBanquerasForm.resx">
       <DependentUpon>RegistroBanquerasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ListarEquipos.rdlc" />
     <EmbeddedResource Include="rEquiposAsignadossForm.resx">
       <DependentUpon>rEquiposAsignadossForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,6 +264,17 @@
     <EmbeddedResource Include="RutasForm.resx">
       <DependentUpon>RutasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AlmacenBancasDataSet.xsc">
+      <DependentUpon>AlmacenBancasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AlmacenBancasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AlmacenBancasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AlmacenBancasDataSet.xss">
+      <DependentUpon>AlmacenBancasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="AlmacenTechDataSet.xsc">
       <DependentUpon>AlmacenTechDataSet.xsd</DependentUpon>
     </None>
