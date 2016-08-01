@@ -13,9 +13,13 @@ namespace AlmacenTech
 {
     public partial class MainForm : Form
     {
+        
         public MainForm()
         {
+    
             InitializeComponent();
+            this.FormClosing += MainForm_FormClosing;
+            
         }
 
         private void registrarMensajeroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,9 +44,9 @@ namespace AlmacenTech
 
         private void registrarBancaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroBancasForm RB = new RegistroBancasForm();
+            /*RegistroBancasForm RB = new RegistroBancasForm();
             RB.MdiParent = this;
-            RB.Show();
+            RB.Show();*/
         }
 
         private void registrarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,5 +111,15 @@ namespace AlmacenTech
             PF.MdiParent = this;
             PF.Show();
         }
+
+        private void MainForm_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            //In case windows is trying to shut down, don't hold the process up
+            if (e.CloseReason == CloseReason.UserClosing)
+                Application.Exit();
+
+            
+        }
+
     }
 }

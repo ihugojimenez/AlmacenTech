@@ -122,16 +122,29 @@ namespace BLL
 
         }
 
-        public static int Cantidad()
+        public static List<Usuarios> getPass(string aux)
         {
-//            int total = 0;
+            List<Usuarios> lista = new List<Usuarios>();
 
             var db = new AlmacenBancasDB();
-            
 
-            return db.usuario.Count();
+            lista = db.usuario.Where(p => p.Contraseña == aux).ToList();
+
+            return lista;
+
         }
 
+        public static List<Usuarios> GetListaFecha(int id, string n)
+        {
+            List<Usuarios> lista = new List<Usuarios>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.usuario.Where(p => p.IdPermiso == id && p.NombreUsuario == n).ToList();
+
+            return lista;
+
+        }
 
     }
 }

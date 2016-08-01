@@ -44,8 +44,8 @@ namespace AlmacenTech.Consultas
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
             EquiposdataGridView.DataSource = EquiposBLL.GetLista();
-            EquiposdataGridView.Columns["EquiposAsignados"].Visible = false;
-            EquiposdataGridView.Columns.Remove("EquiposAsignados");
+            //EquiposdataGridView.Columns["EquiposAsignados"].Visible = false;
+            //EquiposdataGridView.Columns.Remove("EquiposAsignados");
             
             
             

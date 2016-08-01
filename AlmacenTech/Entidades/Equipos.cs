@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace Entidades
         public string SerialNum { get; set; }
         public DateTime FechaIngreso { get; set; }
 
+        [Browsable(false)]
         public virtual ICollection<EquiposAsignados> EquiposAsignados { get; set; }
 
         public Equipos(int EquipoId, string marca)

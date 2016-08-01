@@ -190,11 +190,10 @@
             // 
             // Fecha
             // 
-            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Fecha.DataPropertyName = "FechaIngreso";
             this.Fecha.HeaderText = "Fecha de registro";
             this.Fecha.Name = "Fecha";
-            this.Fecha.Width = 105;
             // 
             // ConsultaEquiposForm
             // 

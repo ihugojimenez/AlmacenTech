@@ -14,10 +14,14 @@ namespace AlmacenTech
         [STAThread]
         static void Main()
         {
+            //MainForm mf = new MainForm();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-            //Application.Run(new IniciarSesionForm());
+            //Application.Run(new MainForm());
+            Application.Run(new IniciarSesionForm());
+            
+
         }
     }
 }

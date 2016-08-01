@@ -1,28 +1,29 @@
 use AlmacenBancas;
 
-
 CREATE TABLE [dbo].[Banqueras] (
     [BanqueraId] INT IDENTITY(1,1) primary key,
     [Nombres]    VARCHAR(80),
+    [Apellidos]  Varchar(80),
     [Direccion]  VARCHAR(100),
-    [Cedula]     VARCHAR(11),
-    [Celular]    VARCHAR(10),
-    [Telefono]   VARCHAR(10),
+    [Cedula]     VARCHAR(13),
+    [Celular]    VARCHAR(12),
+    [Telefono]   VARCHAR(12),
     [Fecha]      DATETIME,
-    [Sexo]       BIT
+    [Sexo]       varchar(1)
 );
 
 go
 
 CREATE TABLE [dbo].[Mensajeros] (
     [MensajeroId]     INT IDENTITY(1,1) primary key,
-    [Nombre]          VARCHAR(30),
-    [Cedula]          VARCHAR(11),
-    [Celular]         VARCHAR(10),
-    [Telefono]        VARCHAR(10),
-    [Direccion]       VARCHAR(50),
+    [Nombre]          VARCHAR(80),
+    Apellido	      varchar(80),	
+    [Cedula]          VARCHAR(13),
+    [Celular]         VARCHAR(12),
+    [Telefono]        VARCHAR(12),
+    [Direccion]       VARCHAR(100),
     [FechaNacimiento] DATETIME,
-    [Sexo]            BIT
+    [Sexo]            varchar(1)
 );
 
 Go
@@ -99,14 +100,16 @@ CREATE TABLE [dbo].[Equipos] (
     [EquipoId]    INT IDENTITY(1,1) primary key,
     [MarcaEquipo] VARCHAR(20),
     [TipoId]  int References TiposEquipos(TipoId),
-    [SerialNum]   VARCHAR(30)
+    [SerialNum]   VARCHAR(30),
+	FechaIngreso  Datetime
     
 );
 
 go
 create table EquiposAsignados(
  IdEquiposAsignados int identity(1,1) primary key,
- EquipoId int references Equipos(EquipoId)
+ Detalle varchar(100)
+
 );
 
 go
@@ -138,4 +141,14 @@ CREATE TABLE [dbo].[Prestamos] (
     [IdBanca]     INT references Bancas(BancaId),
     [IdMEnsajero] INT references Mensajeros(MensajeroId),
     [FechaSalida] DATETIME
+);
+
+go
+
+create table PaqueteEquipos(
+ Id int identity(1,1) primary key,
+ EquipoId int references Equipos(EquipoId),
+ IdEquiposAsignados int references EquiposAsignados(IdEquiposAsignados)
+
+  
 );
