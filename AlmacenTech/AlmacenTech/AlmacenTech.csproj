@@ -306,9 +306,9 @@
       <Project>{0969265E-64FE-42F2-98F4-BFCACD03E08A}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DALL\DALL.csproj">
+    <ProjectReference Include="..\DALL\DAL.csproj">
       <Project>{6f24d062-facd-4868-bca8-2b78e9f7ce7e}</Project>
-      <Name>DALL</Name>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{e6720494-7a69-4a13-a1b4-eadce82a0db2}</Project>

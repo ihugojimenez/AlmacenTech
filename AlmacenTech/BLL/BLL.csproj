@@ -61,9 +61,9 @@
     <Compile Include="UsuariosBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DALL\DALL.csproj">
+    <ProjectReference Include="..\DALL\DAL.csproj">
       <Project>{6F24D062-FACD-4868-BCA8-2B78E9F7CE7E}</Project>
-      <Name>DALL</Name>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{E6720494-7A69-4A13-A1B4-EADCE82A0DB2}</Project>

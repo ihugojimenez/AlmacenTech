@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlmacenTech", "AlmacenTech\AlmacenTech.csproj", "{A3C5DF9A-8B55-49A2-BCEB-078C79F7680A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALL", "DALL\DALL.csproj", "{6F24D062-FACD-4868-BCA8-2B78E9F7CE7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DALL\DAL.csproj", "{6F24D062-FACD-4868-BCA8-2B78E9F7CE7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{E6720494-7A69-4A13-A1B4-EADCE82A0DB2}"
 EndProject

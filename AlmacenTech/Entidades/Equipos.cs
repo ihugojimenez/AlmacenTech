@@ -29,8 +29,10 @@ namespace Entidades
 
         public Equipos(int EquipoId, string marca)
         {
-            this.EquipoId = EquipoId;
+            this.EquipoId = 1;
             this.MarcaEquipo = marca;
+            this.FechaIngreso = DateTime.Now;
+            this.TipoId = 1;
             /*this.TipoId = tipo;
             this.SerialNum = serial;*/
             this.EquiposAsignados = new HashSet<EquiposAsignados>();

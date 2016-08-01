@@ -137,7 +137,7 @@ go
 
 CREATE TABLE [dbo].[Prestamos] (
     [IdPrestamo]  int identity(1,1) primary key,
-    IdEquipo    INT references Equipos(EquipoId),
+    EquipoId    INT references Equipos(EquipoId),
     [IdBanca]     INT references Bancas(BancaId),
     [IdMEnsajero] INT references Mensajeros(MensajeroId),
     [FechaSalida] DATETIME

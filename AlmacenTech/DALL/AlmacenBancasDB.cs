@@ -24,9 +24,11 @@ namespace DALL
         public virtual DbSet<Rutas> Rutas { get; set; }
         public virtual DbSet<PermisoUsuarios> PermisoUsuarios { get; set; }
         public virtual DbSet<EquiposAsignados> EquiposAsignados { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             modelBuilder.Entity<EquiposAsignados>()
                .HasMany<Equipos>(a => a.Equipos)
                .WithMany(p => p.EquiposAsignados)
