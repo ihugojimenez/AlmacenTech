@@ -1,6 +1,6 @@
 ﻿namespace AlmacenTech
 {
-    partial class EquiposForm
+    partial class rEquiposForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,8 @@
             System.Windows.Forms.Label serialNumLabel;
             System.Windows.Forms.Label equipoIdLabel;
             System.Windows.Forms.Label tipoEquipoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EquiposForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEquiposForm));
+            System.Windows.Forms.Label fechaLabel;
             this.marcaEquipoTextBox = new System.Windows.Forms.TextBox();
             this.serialNumTextBox = new System.Windows.Forms.TextBox();
             this.equipoIdTextBox = new System.Windows.Forms.TextBox();
@@ -47,10 +48,12 @@
             this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.MarcaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SerialerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             marcaEquipoLabel = new System.Windows.Forms.Label();
             serialNumLabel = new System.Windows.Forms.Label();
             equipoIdLabel = new System.Windows.Forms.Label();
             tipoEquipoLabel = new System.Windows.Forms.Label();
+            fechaLabel = new System.Windows.Forms.Label();
             this.ButtonsgroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcaerrorProvider)).BeginInit();
@@ -108,7 +111,7 @@
             this.marcaEquipoTextBox.Location = new System.Drawing.Point(101, 60);
             this.marcaEquipoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.marcaEquipoTextBox.Name = "marcaEquipoTextBox";
-            this.marcaEquipoTextBox.Size = new System.Drawing.Size(314, 22);
+            this.marcaEquipoTextBox.Size = new System.Drawing.Size(428, 22);
             this.marcaEquipoTextBox.TabIndex = 2;
             // 
             // serialNumTextBox
@@ -118,7 +121,7 @@
             this.serialNumTextBox.Location = new System.Drawing.Point(101, 107);
             this.serialNumTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.serialNumTextBox.Name = "serialNumTextBox";
-            this.serialNumTextBox.Size = new System.Drawing.Size(314, 22);
+            this.serialNumTextBox.Size = new System.Drawing.Size(428, 22);
             this.serialNumTextBox.TabIndex = 3;
             // 
             // equipoIdTextBox
@@ -138,7 +141,7 @@
             this.tipoEquipoComboBox.Location = new System.Drawing.Point(91, 157);
             this.tipoEquipoComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.tipoEquipoComboBox.Name = "tipoEquipoComboBox";
-            this.tipoEquipoComboBox.Size = new System.Drawing.Size(324, 24);
+            this.tipoEquipoComboBox.Size = new System.Drawing.Size(438, 24);
             this.tipoEquipoComboBox.TabIndex = 4;
             this.tipoEquipoComboBox.SelectedIndexChanged += new System.EventHandler(this.tipoEquipoComboBox_SelectedIndexChanged);
             // 
@@ -148,7 +151,7 @@
             this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateButton.Image")));
             this.UpdateButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.UpdateButton.Location = new System.Drawing.Point(218, 19);
+            this.UpdateButton.Location = new System.Drawing.Point(278, 19);
             this.UpdateButton.Margin = new System.Windows.Forms.Padding(2);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(61, 52);
@@ -179,7 +182,7 @@
             this.Deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Deletebutton.Image")));
             this.Deletebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Deletebutton.Location = new System.Drawing.Point(322, 18);
+            this.Deletebutton.Location = new System.Drawing.Point(382, 18);
             this.Deletebutton.Margin = new System.Windows.Forms.Padding(2);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(60, 52);
@@ -200,7 +203,7 @@
             this.ButtonsgroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonsgroupBox.Name = "ButtonsgroupBox";
             this.ButtonsgroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.ButtonsgroupBox.Size = new System.Drawing.Size(403, 80);
+            this.ButtonsgroupBox.Size = new System.Drawing.Size(517, 80);
             this.ButtonsgroupBox.TabIndex = 15;
             this.ButtonsgroupBox.TabStop = false;
             this.ButtonsgroupBox.Text = "Opciones";
@@ -209,7 +212,7 @@
             // 
             this.NewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NewButton.Image = ((System.Drawing.Image)(resources.GetObject("NewButton.Image")));
-            this.NewButton.Location = new System.Drawing.Point(12, 19);
+            this.NewButton.Location = new System.Drawing.Point(72, 19);
             this.NewButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(66, 51);
@@ -225,7 +228,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.Image = ((System.Drawing.Image)(resources.GetObject("SaveButton.Image")));
             this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.SaveButton.Location = new System.Drawing.Point(112, 18);
+            this.SaveButton.Location = new System.Drawing.Point(172, 18);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(66, 52);
@@ -247,13 +250,38 @@
             // 
             this.SerialerrorProvider.ContainerControl = this;
             // 
-            // EquiposForm
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechaLabel.Location = new System.Drawing.Point(301, 19);
+            fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(116, 16);
+            fechaLabel.TabIndex = 49;
+            fechaLabel.Text = "Fecha de Ingreso:";
+            // 
+            // fechaDateTimePicker
+            // 
+            this.fechaDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.fechaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(421, 14);
+            this.fechaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(108, 22);
+            this.fechaDateTimePicker.TabIndex = 48;
+            // 
+            // rEquiposForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(439, 298);
+            this.ClientSize = new System.Drawing.Size(543, 298);
+            this.Controls.Add(fechaLabel);
+            this.Controls.Add(this.fechaDateTimePicker);
             this.Controls.Add(this.ButtonsgroupBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(tipoEquipoLabel);
@@ -267,9 +295,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(455, 337);
-            this.MinimumSize = new System.Drawing.Size(455, 337);
-            this.Name = "EquiposForm";
+            this.MinimumSize = new System.Drawing.Size(559, 337);
+            this.Name = "rEquiposForm";
             this.Text = "Registro de Equipos";
             this.Load += new System.EventHandler(this.EquiposForm_Load);
             this.ButtonsgroupBox.ResumeLayout(false);
@@ -296,5 +323,6 @@
         private System.Windows.Forms.Button NewButton;
         private System.Windows.Forms.ErrorProvider MarcaerrorProvider;
         private System.Windows.Forms.ErrorProvider SerialerrorProvider;
+        private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
     }
 }

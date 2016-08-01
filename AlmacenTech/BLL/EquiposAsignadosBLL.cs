@@ -67,6 +67,31 @@ namespace BLL
 
         }
 
-        
+        public static List<EquiposAsignados> GetListaEquipos(int id)
+        {
+            List<EquiposAsignados> lista = new List<EquiposAsignados>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.EquiposAsignados.Where(p => p.IdEquiposAsignados == id &&  p.Equipos.Count >0).ToList();
+
+            return lista;
+
+        }
+
+        public static List<EquiposAsignados> GetListaDetalle(string aux)
+        {
+            List<EquiposAsignados> lista = new List<EquiposAsignados>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.EquiposAsignados.Where(p => p.Detalle == aux).ToList();
+
+            return lista;
+
+        }
+
+
+
     }
 }

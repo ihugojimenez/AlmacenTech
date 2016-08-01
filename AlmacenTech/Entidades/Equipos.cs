@@ -21,12 +21,13 @@ namespace Entidades
         public string MarcaEquipo { get; set; }
         public int TipoId { get; set; }
         public string SerialNum { get; set; }
+        public DateTime FechaIngreso { get; set; }
 
         public virtual ICollection<EquiposAsignados> EquiposAsignados { get; set; }
 
-        public Equipos(int idequipo, string marca)
+        public Equipos(int EquipoId, string marca)
         {
-            this.EquipoId = idequipo;
+            this.EquipoId = EquipoId;
             this.MarcaEquipo = marca;
             /*this.TipoId = tipo;
             this.SerialNum = serial;*/

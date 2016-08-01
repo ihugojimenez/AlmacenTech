@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AlmacenTech
 {
-    public partial class EquiposForm : Form
+    public partial class rEquiposForm : Form
     {
         Equipos equipo = new Equipos();
         RegisterUsersForm RU = new RegisterUsersForm();
-        public EquiposForm()
+        public rEquiposForm()
         {
             InitializeComponent();
         }
@@ -78,9 +78,12 @@ namespace AlmacenTech
 
         private void limpiar()
         {
+            DateTimePicker dp = new DateTimePicker();
             marcaEquipoTextBox.Text = "";
             serialNumTextBox.Text = "";
             equipoIdTextBox.Text = "";
+            fechaDateTimePicker.Value = dp.Value;
+            tipoEquipoComboBox.SelectedValue = 1;
             limpiarErrores();
             
 
@@ -92,6 +95,7 @@ namespace AlmacenTech
             marcaEquipoTextBox.Text = equipo.MarcaEquipo;
             serialNumTextBox.Text = equipo.SerialNum;
             tipoEquipoComboBox.SelectedValue = equipo.TipoId;
+            fechaDateTimePicker.Value = equipo.FechaIngreso;
         }
 
         private bool validarId(string message)
@@ -126,7 +130,7 @@ namespace AlmacenTech
             E.MarcaEquipo = marcaEquipoTextBox.Text;
             E.SerialNum = serialNumTextBox.Text;
             E.TipoId = (int)tipoEquipoComboBox.SelectedValue;
-
+            E.FechaIngreso = fechaDateTimePicker.Value;
 
         }
 

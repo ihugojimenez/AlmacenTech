@@ -149,7 +149,7 @@ namespace AlmacenTech
 
         private bool ValidarTextbox()
         {
-            int n = UsuariosBLL.Cantidad();
+            
             if (string.IsNullOrEmpty(UserNameTextBox.Text) && string.IsNullOrEmpty(PassTextBox.Text) && string.IsNullOrEmpty(ConfPassTextBox.Text))
             {
                 NombreUsuarioerrorProvider.SetError(UserNameTextBox, "Favor ingresar el nombre de Usuario");
@@ -188,14 +188,7 @@ namespace AlmacenTech
                 return false;
             }
 
-            for(int aux= 4; aux<= n; aux++)
-            {
-                if( UserNameTextBox.Text == UsuariosBLL.Buscar(aux).NombreUsuario )
-                {
-                    MessageBox.Show("EL Nombre de usuario que intenta ingresar ya existe");
-                    return false;
-                }
-            }
+            
 
             return true;
                 
@@ -203,7 +196,7 @@ namespace AlmacenTech
             
            
         }
-        //Todavia tengo que validar cuando existe un usuario registrado...
+        
 
         private void Cargar()
         {

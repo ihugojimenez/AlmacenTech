@@ -47,7 +47,7 @@ namespace AlmacenTech
 
         private void registrarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EquiposForm EF = new EquiposForm();
+            rEquiposForm EF = new rEquiposForm();
             EF.MdiParent = this;
             EF.Show();
         }

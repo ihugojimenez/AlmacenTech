@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,9 +40,16 @@ namespace AlmacenTech.Consultas
             FiltrocomboBox.Items.Insert(0, "ID");
             FiltrocomboBox.Items.Insert(1, "Marca");
             FiltrocomboBox.Items.Insert(2, "ID Tipo de equipo");
+            FiltrocomboBox.Items.Insert(3, "Fecha de ingreso");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
             EquiposdataGridView.DataSource = EquiposBLL.GetLista();
+            EquiposdataGridView.Columns["EquiposAsignados"].Visible = false;
+            EquiposdataGridView.Columns.Remove("EquiposAsignados");
+            
+            
+            
+
         }
 
         private void BuscarSeleccion()
@@ -52,29 +60,61 @@ namespace AlmacenTech.Consultas
                 EquiposdataGridView.DataSource = EquiposBLL.GetListaMarca(FiltrotextBox.Text);
             if (FiltrocomboBox.SelectedIndex == 2)
                 EquiposdataGridView.DataSource = EquiposBLL.GetListaTipo(RU.StringToInt(FiltrotextBox.Text));
-
+            if (FiltrocomboBox.SelectedIndex == 3)
+                EquiposdataGridView.DataSource = EquiposBLL.GetListaFecha(DesdeDateTimePicke.Value, HastadateTimePicker.Value);
         }
 
 
         private bool validar()
         {
+            if(FiltrocomboBox.SelectedIndex == 3)
+            {
+                if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
+                {
+                    MessageBox.Show("Favor definir un intervalo diferente entre las dos fechas");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             if (string.IsNullOrEmpty(FiltrotextBox.Text))
             {
                 BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                 return false;
             }
 
-            if (EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaTipo(RU.StringToInt(FiltrotextBox.Text)).Count == 0)
+            if (EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaTipo(RU.StringToInt(FiltrotextBox.Text)).Count == 0 || EquiposBLL.GetListaFecha(DesdeDateTimePicke.Value, HastadateTimePicker.Value).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
 
             }
+            
             BuscarerrorProvider.Clear();
 
             return true;
         }
 
-        
+        private void Imprimebutton_Click(object sender, EventArgs e)
+        {
+            ReportingViewer viewer = new ReportingViewer();
+
+            viewer.RptViewer.Reset();
+            viewer.RptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+
+            viewer.RptViewer.LocalReport.ReportPath = @"C:\Users\Henry O\Source\Repos\AlmacenTech2\AlmacenTech\AlmacenTech\Reportes\ListarEquipos.rdlc";
+
+            viewer.RptViewer.LocalReport.DataSources.Clear();
+
+            viewer.RptViewer.LocalReport.DataSources.Add(
+                new ReportDataSource("Equipos",
+                EquiposBLL.GetLista()));
+
+            viewer.RptViewer.LocalReport.Refresh();
+
+            viewer.Show();
+        }
     }
 }

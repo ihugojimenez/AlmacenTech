@@ -118,6 +118,18 @@ namespace BLL
 
         }
 
+        public static List<Equipos> GetListaFecha(DateTime D, DateTime H)
+        {
+            List<Equipos> lista = new List<Equipos>();
+
+            var db = new AlmacenBancasDB();
+
+            lista = db.equipo.Where(p => p.FechaIngreso >= D && p.FechaIngreso <= H).ToList();
+
+            return lista;
+
+        }
+
 
     }
 }
