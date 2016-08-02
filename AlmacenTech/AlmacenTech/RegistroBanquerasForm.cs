@@ -55,7 +55,7 @@ namespace AlmacenTech
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (validarId("Favor Buscar la banquera que desea actualizar") && ValidarTextbox())
+            if (validarId("Favor Buscar la banquera que desea actualizar") && ValidarTextbox() && ValidarExiste(cedulaMaskedTextBox.Text))
             {
 
                 LlenarClase(banquera);

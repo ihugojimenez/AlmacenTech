@@ -23,7 +23,7 @@ namespace AlmacenTech.Consultas
             Cargar();
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
             if (validar())
                 BuscarSeleccion();
@@ -45,9 +45,7 @@ namespace AlmacenTech.Consultas
                 BanquerasdataGridView.DataSource = BanquerasBLL.GetListaId(StringToInt(FiltrotextBox.Text));
             if (FiltrocomboBox.SelectedIndex == 1)
                 BanquerasdataGridView.DataSource = BanquerasBLL.GetListaApellido(FiltrotextBox.Text);
-           /* if (FiltrocomboBox.SelectedIndex == 2)
-                BanquerasdataGridView.DataSource = EquiposBLL.GetListaTipo(StringToInt(FiltrotextBox.Text));*/
-
+           
         }
 
         private int StringToInt(string texto)
@@ -66,16 +64,25 @@ namespace AlmacenTech.Consultas
                 BuscarerrorProvider.SetError(FiltrotextBox, "Ingresar el campo que desea filtar");
                 return false;
             }
-            if (BanquerasBLL.GetListaApellido(FiltrotextBox.Text).Count == 0 || BanquerasBLL.GetListaId(StringToInt(FiltrotextBox.Text)).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 1 && BanquerasBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
 
             }
+
+            if (FiltrocomboBox.SelectedIndex == 0 && BanquerasBLL.GetListaId(StringToInt(FiltrotextBox.Text)).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
+            
             BuscarerrorProvider.Clear();
 
             return true;
         }
 
+       
     }
 }

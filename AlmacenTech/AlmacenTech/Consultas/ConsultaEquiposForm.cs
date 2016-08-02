@@ -30,7 +30,8 @@ namespace AlmacenTech.Consultas
 
         private void Buscarbutton_Click_1(object sender, EventArgs e)
         {
-            if (validar())
+            
+            if (validar()==true)
                 BuscarSeleccion();
             
         }
@@ -43,12 +44,7 @@ namespace AlmacenTech.Consultas
             FiltrocomboBox.Items.Insert(3, "Fecha de ingreso");
             FiltrocomboBox.DataSource = FiltrocomboBox.Items;
             FiltrocomboBox.DisplayMember = "ID";
-            EquiposdataGridView.DataSource = EquiposBLL.GetLista();
-            //EquiposdataGridView.Columns["EquiposAsignados"].Visible = false;
-            //EquiposdataGridView.Columns.Remove("EquiposAsignados");
-            
-            
-            
+            EquiposdataGridView.DataSource = EquiposBLL.GetLista();        
 
         }
 
@@ -67,6 +63,7 @@ namespace AlmacenTech.Consultas
 
         private bool validar()
         {
+            
             if(FiltrocomboBox.SelectedIndex == 3)
             {
                 if (DesdeDateTimePicke.Value == HastadateTimePicker.Value)
@@ -85,15 +82,22 @@ namespace AlmacenTech.Consultas
                 return false;
             }
 
-            if (EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0 || EquiposBLL.GetListaTipo(RU.StringToInt(FiltrotextBox.Text)).Count == 0 || EquiposBLL.GetListaFecha(DesdeDateTimePicke.Value, HastadateTimePicker.Value).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 1 && EquiposBLL.GetListaMarca(FiltrotextBox.Text).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
 
             }
-            
+            if (FiltrocomboBox.SelectedIndex == 0 && EquiposBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count== 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
+
             BuscarerrorProvider.Clear();
 
+            
             return true;
         }
 

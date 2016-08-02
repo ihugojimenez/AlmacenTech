@@ -26,11 +26,7 @@ namespace AlmacenTech.Consultas
             Cargar();
         }
 
-        private void Buscarbutton_Click(object sender, EventArgs e)
-        {
-            if (validar())
-                BuscarSeleccion();
-        }
+      
 
         private void Cargar()
         {
@@ -60,7 +56,14 @@ namespace AlmacenTech.Consultas
                 return false;
             }
 
-            if(MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count == 0 || MensajerosBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
+            if (MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count == 0)
+            {
+                MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
+                return false;
+
+            }
+
+            if (MensajerosBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
@@ -71,6 +74,10 @@ namespace AlmacenTech.Consultas
             return true;
         }
 
-
+        private void Buscarbutton_Click_1(object sender, EventArgs e)
+        {
+            if (validar())
+                BuscarSeleccion();
+        }
     }
 }

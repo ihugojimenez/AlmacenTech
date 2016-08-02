@@ -88,7 +88,7 @@ namespace BLL
 
             var db = new AlmacenBancasDB();
 
-            lista = db.equipo.Where(p => p.MarcaEquipo == m).ToList();
+            lista = db.equipo.Where(p => string.Equals(p.MarcaEquipo, m)).ToList();
 
             return lista;
 

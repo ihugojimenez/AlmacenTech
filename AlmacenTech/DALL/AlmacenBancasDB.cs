@@ -35,7 +35,7 @@ namespace DALL
                .Map(pa =>
                {
                    pa.MapLeftKey("idEquiposAsignados");
-                   pa.MapRightKey("IdEquipo");
+                   pa.MapRightKey("EquipoId");
                    pa.ToTable("PaqueteEquipos");
                });
 
