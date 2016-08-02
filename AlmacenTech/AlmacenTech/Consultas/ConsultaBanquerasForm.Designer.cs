@@ -45,6 +45,7 @@
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BuscarerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Imprimebutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BanquerasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BuscarerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -142,7 +143,7 @@
             // 
             this.FiltrotextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.FiltrotextBox.Location = new System.Drawing.Point(83, 36);
-            this.FiltrotextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FiltrotextBox.Margin = new System.Windows.Forms.Padding(4);
             this.FiltrotextBox.Name = "FiltrotextBox";
             this.FiltrotextBox.Size = new System.Drawing.Size(640, 22);
             this.FiltrotextBox.TabIndex = 35;
@@ -152,7 +153,7 @@
             this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Location = new System.Drawing.Point(796, 34);
-            this.FiltrocomboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FiltrocomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
             this.FiltrocomboBox.Size = new System.Drawing.Size(324, 24);
             this.FiltrocomboBox.TabIndex = 36;
@@ -185,11 +186,26 @@
             // 
             this.BuscarerrorProvider.ContainerControl = this;
             // 
+            // Imprimebutton
+            // 
+            this.Imprimebutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimebutton.Image")));
+            this.Imprimebutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Imprimebutton.Location = new System.Drawing.Point(13, 466);
+            this.Imprimebutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Imprimebutton.Name = "Imprimebutton";
+            this.Imprimebutton.Size = new System.Drawing.Size(100, 63);
+            this.Imprimebutton.TabIndex = 39;
+            this.Imprimebutton.Text = "Imprimir";
+            this.Imprimebutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Imprimebutton.UseVisualStyleBackColor = true;
+            this.Imprimebutton.Click += new System.EventHandler(this.Imprimebutton_Click);
+            // 
             // ConsultaBanquerasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 466);
+            this.ClientSize = new System.Drawing.Size(1236, 534);
+            this.Controls.Add(this.Imprimebutton);
             this.Controls.Add(this.FiltrotextBox);
             this.Controls.Add(this.FiltrocomboBox);
             this.Controls.Add(this.Buscarbutton);
@@ -198,8 +214,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1254, 513);
-            this.MinimumSize = new System.Drawing.Size(1254, 513);
+            this.MaximumSize = new System.Drawing.Size(1254, 581);
+            this.MinimumSize = new System.Drawing.Size(1254, 581);
             this.Name = "ConsultaBanquerasForm";
             this.Text = "Consulta de Banqueras";
             this.Load += new System.EventHandler(this.ConsultaBanquerasForm_Load);
@@ -226,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
+        private System.Windows.Forms.Button Imprimebutton;
     }
 }

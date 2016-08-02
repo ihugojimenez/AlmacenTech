@@ -103,7 +103,7 @@ namespace AlmacenTech.Consultas
 
         private void Imprimebutton_Click(object sender, EventArgs e)
         {
-            ReportingViewer viewer = new ReportingViewer();
+            ReportingViewerEquipos viewer = new ReportingViewerEquipos();
 
             viewer.RptViewer.Reset();
             viewer.RptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
@@ -112,6 +112,12 @@ namespace AlmacenTech.Consultas
 
             viewer.RptViewer.LocalReport.DataSources.Clear();
 
+            //if(FiltrocomboBox.SelectedIndex == 0)
+            //{
+            //    viewer.RptViewer.LocalReport.DataSources.Add(
+            //    new ReportDataSource("DataSetEquipos",
+            //    EquiposBLL.GetListaId(Convert.ToInt32(FiltrocomboBox.Text))));
+            //}
             viewer.RptViewer.LocalReport.DataSources.Add(
                 new ReportDataSource("DataSetEquipos",
                 EquiposBLL.GetLista()));

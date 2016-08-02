@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,6 +84,25 @@ namespace AlmacenTech.Consultas
             return true;
         }
 
-       
+        private void Imprimebutton_Click(object sender, EventArgs e)
+        {
+            ReportingViewerBanqueras viewer = new ReportingViewerBanqueras();
+
+            viewer.RptViewer.Reset();
+            viewer.RptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+
+            viewer.RptViewer.LocalReport.ReportPath = @"C:\Users\Henry O\Source\Repos\AlmacenTech2\AlmacenTech\AlmacenTech\Reportes\ListadoBanqueras.rdlc";
+
+            viewer.RptViewer.LocalReport.DataSources.Clear();
+
+
+            viewer.RptViewer.LocalReport.DataSources.Add(
+                new ReportDataSource("BanquerasDataSet",
+                BanquerasBLL.GetLista()));
+
+            viewer.RptViewer.LocalReport.Refresh();
+
+            viewer.Show();
+        }
     }
 }

@@ -10,23 +10,17 @@ using System.Windows.Forms;
 
 namespace AlmacenTech.Consultas
 {
-    public partial class ReportingViewer : Form
+    public partial class ReportingViewerMensajeros : Form
     {
-        public ReportingViewer()
+        public ReportingViewerMensajeros()
         {
             InitializeComponent();
         }
 
-        private void ReportingViewer_Load(object sender, EventArgs e)
+        private void ReportingViewerMensajeros_Load(object sender, EventArgs e)
         {
 
             this.RptViewer.RefreshReport();
-            
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

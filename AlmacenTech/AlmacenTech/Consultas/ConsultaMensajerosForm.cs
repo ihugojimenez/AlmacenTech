@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entidades;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,14 +57,14 @@ namespace AlmacenTech.Consultas
                 return false;
             }
 
-            if (MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 0 && MensajerosBLL.GetListaId(RU.StringToInt(FiltrotextBox.Text)).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
 
             }
 
-            if (MensajerosBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
+            if (FiltrocomboBox.SelectedIndex == 1 && MensajerosBLL.GetListaApellido(FiltrotextBox.Text).Count == 0)
             {
                 MessageBox.Show("No hay registros que coincidan con este campo de filtro..." + "\n" + "\n" + "Intente con otro campo");
                 return false;
@@ -78,6 +79,27 @@ namespace AlmacenTech.Consultas
         {
             if (validar())
                 BuscarSeleccion();
+        }
+
+        private void Imprimebutton_Click(object sender, EventArgs e)
+        {
+            ReportingViewerMensajeros viewer = new ReportingViewerMensajeros();
+
+            viewer.RptViewer.Reset();
+            viewer.RptViewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+
+            viewer.RptViewer.LocalReport.ReportPath = @"C:\Users\Henry O\Source\Repos\AlmacenTech2\AlmacenTech\AlmacenTech\Reportes\ListadoMensajeros.rdlc";
+
+            viewer.RptViewer.LocalReport.DataSources.Clear();
+
+
+            viewer.RptViewer.LocalReport.DataSources.Add(
+                new ReportDataSource("DataSetMensajeros",
+                MensajerosBLL.GetLista()));
+
+            viewer.RptViewer.LocalReport.Refresh();
+
+            viewer.Show();
         }
     }
 }

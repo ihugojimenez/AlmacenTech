@@ -120,11 +120,23 @@
     <Compile Include="Consultas\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ReportingViewer.cs">
+    <Compile Include="Consultas\ReportingViewerBanqueras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ReportingViewer.Designer.cs">
-      <DependentUpon>ReportingViewer.cs</DependentUpon>
+    <Compile Include="Consultas\ReportingViewerBanqueras.Designer.cs">
+      <DependentUpon>ReportingViewerBanqueras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerEquipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerEquipos.Designer.cs">
+      <DependentUpon>ReportingViewerEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerMensajeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ReportingViewerMensajeros.Designer.cs">
+      <DependentUpon>ReportingViewerMensajeros.cs</DependentUpon>
     </Compile>
     <Compile Include="EntradasForm.cs">
       <SubType>Form</SubType>
@@ -215,13 +227,21 @@
     <EmbeddedResource Include="Consultas\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ReportingViewer.resx">
-      <DependentUpon>ReportingViewer.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\ReportingViewerBanqueras.resx">
+      <DependentUpon>ReportingViewerBanqueras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ReportingViewerEquipos.resx">
+      <DependentUpon>ReportingViewerEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ReportingViewerMensajeros.resx">
+      <DependentUpon>ReportingViewerMensajeros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EntradasForm.resx">
       <DependentUpon>EntradasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ListadoBanqueras.rdlc" />
     <EmbeddedResource Include="Reportes\ListadoEquipos.rdlc" />
+    <EmbeddedResource Include="Reportes\ListadoMensajeros.rdlc" />
     <EmbeddedResource Include="rEquiposForm.resx">
       <DependentUpon>rEquiposForm.cs</DependentUpon>
     </EmbeddedResource>
