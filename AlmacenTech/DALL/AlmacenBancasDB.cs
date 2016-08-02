@@ -39,8 +39,6 @@ namespace DALL
                    pa.ToTable("PaqueteEquipos");
                });
 
-
-
         }
 
     }
