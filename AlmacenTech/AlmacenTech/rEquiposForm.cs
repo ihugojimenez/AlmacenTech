@@ -59,9 +59,13 @@ namespace AlmacenTech
             {
 
                 LlenarClase(equipo);
-                EquiposBLL.Actualizar(RU.StringToInt(equipoIdTextBox.Text), equipo);
-                limpiar();
-                MessageBox.Show("Actualizado con exito");
+                if(ValidarExiste(serialNumTextBox.Text))
+                {
+                    EquiposBLL.Actualizar(RU.StringToInt(equipoIdTextBox.Text), equipo);
+                    limpiar();
+                    MessageBox.Show("Actualizado con exito");
+                }
+               
             }
         }
 

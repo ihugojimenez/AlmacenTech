@@ -62,9 +62,13 @@ namespace AlmacenTech
             {
                 
                 LlenarClase(usuario);
-                UsuariosBLL.Actualizar(StringToInt(IDtextBox.Text), usuario);
-                limpiar();
-                MessageBox.Show("Actualizado con exito");
+                if(ValidarExiste(UserNameTextBox.Text))
+                {
+                    UsuariosBLL.Actualizar(StringToInt(IDtextBox.Text), usuario);
+                    limpiar();
+                    MessageBox.Show("Actualizado con exito");
+                }
+                    
             }
 
         }

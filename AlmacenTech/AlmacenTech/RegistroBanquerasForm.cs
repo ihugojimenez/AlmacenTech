@@ -57,12 +57,16 @@ namespace AlmacenTech
         {
             if (validarId("Favor Buscar la banquera que desea actualizar") && ValidarTextbox() && ValidarExiste(cedulaMaskedTextBox.Text))
             {
-
                 LlenarClase(banquera);
-                BanquerasBLL.Actualizar(RU.StringToInt(banqueraIdTextBox.Text), banquera);
-                limpiar();
-                limpiarErrores();
-                MessageBox.Show("Actualizado con exito");
+                if (ValidarExiste(cedulaMaskedTextBox.Text))
+                {
+                    
+                    BanquerasBLL.Actualizar(RU.StringToInt(banqueraIdTextBox.Text), banquera);
+                    limpiar();
+                    limpiarErrores();
+                    MessageBox.Show("Actualizado con exito");
+                }
+                
             }
         }
 

@@ -44,7 +44,7 @@ namespace AlmacenTech
         {
             BuscarerrorProvider.Clear();
             LlenarClase(mensajero);
-            if (ValidarTextbox())
+            if (ValidarTextbox() && ValidarExiste(cedulaMaskedTextBox.Text))
             {
                 MensajerosBLL.Insertar(mensajero);
                 limpiar();
@@ -59,10 +59,14 @@ namespace AlmacenTech
             {
 
                 LlenarClase(mensajero);
-                MensajerosBLL.Actualizar(RU.StringToInt(mensajeroIdTextBox.Text), mensajero);
-                limpiar();
-                limpiarErrores();
-                MessageBox.Show("Actualizado con exito");
+                if(ValidarExiste(cedulaMaskedTextBox.Text))
+                {
+                    MensajerosBLL.Actualizar(RU.StringToInt(mensajeroIdTextBox.Text), mensajero);
+                    limpiar();
+                    limpiarErrores();
+                    MessageBox.Show("Actualizado con exito");
+                }
+                
             }
         }
 
